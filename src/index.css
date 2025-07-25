@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+html,
+body {
+    width: 100%;
+    background-color: black;
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* main {
+  @apply w-full overflow-x-hidden;
+}
+
+a {
+    @apply cursor-pointer text-nowrap md:text-base text-sm;
+}
+
+ul {
+    @apply flex-center lg:gap-12 gap-7;
+} */
+
+@utility flex-center{
+    @apply flex justify-center items-center;
+}
