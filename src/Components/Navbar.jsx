@@ -36,17 +36,19 @@ const Navbar = () => {
                 <button className="bg-amber-500 px-2 rounded hover:bg-amber-300 font-bold">Contact</button>
             </div>
 
-            <div className="md:hidden fixed top-0 left-0 right-0 flex items-center text-white">
-                <button
-                    className="m-2"
-                    onClick={() => setIsOpen(!isOpen)}
-                    >
-                    Menu
-                </button>
-            </div>
+            {!isOpen && (
+                <div className="md:hidden fixed top-0 left-0 flex items-center m-3 p-2 text-amber-200">
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        >
+                        Menu
+                    </button>
+                </div>
+            )}
+            
 
             {isOpen && (
-                <div className="md:hidden bg-black text-white flex flex-col items-start gap-4 px-4 py-2 mx-3 fixed top-12 border-2 rounded-3xl border-amber-300 w-fit z-40">
+                <div id="navi" className="md:hidden bg-black text-white flex gap-4 px-4 py-2 m-2 fixed top-0 left-0 border-2 rounded-3xl border-amber-300 w-fit z-40">
                     <a href="/home" className="hover:text-amber-200" onClick={() => setIsOpen(false)}>
                         Home
                     </a>
@@ -56,6 +58,12 @@ const Navbar = () => {
                     <a href="/projects" className="hover:text-amber-200" onClick={() => setIsOpen(false)}>
                         Projects
                     </a>
+                    <button
+                        className="text-amber-200"
+                        onClick={() => setIsOpen(!isOpen)}
+                        >
+                        X
+                    </button>
                 </div>
             )}
                     
