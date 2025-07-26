@@ -29,18 +29,20 @@ const Navbar = () => {
 
     return(
         <nav>
-            <div id="navi" className="hidden fixed top-0 left-0 right-0 md:flex flex-center justify-around py-2">
-                <a href="/home" className="hover:text-amber-200">Home</a>
-                <a href="/about" className="hover:text-amber-200">About</a>
-                <a href="/projects" className="hover:text-amber-200">Projects</a>
-                <button className="bg-amber-500 px-2 rounded hover:bg-amber-300 font-bold">Contact</button>
+            <div id="navi" className="hidden md:flex fixed top-0 left-0 right-0 flex-center justify-around py-2">
+                <a href="/home" className="hover:text-blue-200">Home</a>
+                <a href="/about" className="hover:text-blue-200">About</a>
+                <a href="/projects" className="hover:text-blue-200">Projects</a>
+                {/* <button className="relative px-4 py-1 bg-gradient-to-r from-yellow-500 to-emerald-500 text-white font-bold rounded-md overflow-hidden group cursor-pointer hover:scale-105 duration-300">
+                    <span className="absolute inset-0 bg-white opacity-50 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-500"></span>
+                    <span className="relative z-10">Contact</span>
+                </button> */}
+                <a href="/contact" className="hover:text-blue-200">Contact</a>
             </div>
 
             {!isOpen && (
-                <div className="md:hidden fixed top-0 left-0 flex items-center m-3 p-2 text-amber-200">
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        >
+                <div id="navi" className="md:hidden fixed top-0 left-0 flex gap-4 px-4 py-2 m-2 border-2 border-amber-400 rounded-3xl w-fit z-10">
+                    <button onClick={() => setIsOpen(!isOpen)}>
                         Menu
                     </button>
                 </div>
@@ -48,7 +50,7 @@ const Navbar = () => {
             
 
             {isOpen && (
-                <div id="navi" className="md:hidden bg-black text-white flex gap-4 px-4 py-2 m-2 fixed top-0 left-0 border-2 rounded-3xl border-amber-300 w-fit z-40">
+                <div id="navi" className="md:hidden fixed top-0 left-0 flex gap-4 px-4 py-2 m-2 border-2 rounded-3xl border-amber-400 w-fit z-10">
                     <a href="/home" className="hover:text-amber-200" onClick={() => setIsOpen(false)}>
                         Home
                     </a>
@@ -58,10 +60,7 @@ const Navbar = () => {
                     <a href="/projects" className="hover:text-amber-200" onClick={() => setIsOpen(false)}>
                         Projects
                     </a>
-                    <button
-                        className="text-amber-200"
-                        onClick={() => setIsOpen(!isOpen)}
-                        >
+                    <button onClick={() => setIsOpen(!isOpen)}>
                         X
                     </button>
                 </div>
