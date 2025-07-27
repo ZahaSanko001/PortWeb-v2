@@ -29,7 +29,7 @@ const Navbar = () => {
 
     return(
         <nav>
-            <div id="navi" className="hidden md:flex fixed top-0 left-0 right-0 flex-center justify-around py-2">
+            <div id="navi" className="hidden md:flex fixed top-0 left-0 right-0 flex-center justify-around py-2 z-10">
                 <a href="/home" className="hover:text-blue-200">Home</a>
                 <a href="/about" className="hover:text-blue-200">About</a>
                 <a href="/projects" className="hover:text-blue-200">Projects</a>
