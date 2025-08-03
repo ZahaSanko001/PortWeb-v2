@@ -83,7 +83,7 @@ const Carousel = () => {
     return (
         <div className="overflow-x-hidden h-screen flex flex-col justify-center gap-2" ref={wrapper0}>
 
-            <div className="wrapper" ref={wrapper}>
+            <div className="wrapper hidden md:flex" ref={wrapper}>
                 <div className="flex space-x-6" ref={container1}>
 
                     <div className="flex flex-col items-center">
@@ -344,7 +344,7 @@ const Carousel = () => {
             </div>
 
          
-            <div className="wrapper hidden md:flex" >
+            <div className="wrapper" >
                 <div className="flex space-x-1 min-w-max" ref={container2}>
                     <div className="flex"><img src="scene/1.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
                     <div className="flex"><img src="scene/2.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
