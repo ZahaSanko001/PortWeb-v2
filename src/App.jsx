@@ -5,6 +5,8 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
 import Carousel from "./Components/Carousel";
+import About from "./Components/About";
+import Projects from "./Components/Projects";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -14,8 +16,8 @@ const App = () => {
       <Navbar/>
       <Hero/>
       <Carousel/>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
+      <About/>
+      <Projects/>
       <div className="h-screen"></div>
     </main>
   )
