@@ -15,13 +15,13 @@ const Projects = () => {
             id: 1,
             icon: <a href=""><img className="h-full w-full object-cover rounded-2xl" src="Margarita.png" alt="" /></a>,
             title: "Margarita Ville",
-            text: "A concept project for a Margarita Ville style bar"
+            text: "A concept project for a Margarita Ville style bar (Will deploy soon)"
         },
         {
             id: 2,
             icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.jpg" alt="" />,
             title: "Vigener Cypher",
-            text: "A vigener table and cypher generator for encryption and passphase use. (Currently building the front)"
+            text: "A vigener table and cypher generator for encryption and passphase use (Currently building the front)"
         },
         {
             id: 3,
@@ -66,7 +66,7 @@ const Projects = () => {
             <div ref={contentRef} className="card-wrapper h-[200vh] flex flex-col gap-5 md:gap-12 items-center pt-16 md:mt-12  rounded-t-4xl md:rounded-t-[6rem] ">
                 
                 <h1 ref={texth} className="text-5xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500">Projects</h1>
-                <div className="min-h-screen w-full md:w-[90%] md:px-16 rounded-4xl md:rounded-[6rem] overflow-hidden bg-gradient-to-b from-blue-300 via-gray-800 to-blue-300">
+                <div className="min-h-screen w-full md:w-[90%] md:px-16 rounded-4xl md:rounded-[6rem] overflow-hidden border-2 border-blue-200/30 bg-gradient-to-b from-black via-blue-300 to-black">
                     {projectData.map((card) => {
                         return (
                             <div className="card p-6 border-b rounded-4xl border-white/25 overflow-hidden" key={card.id}>
