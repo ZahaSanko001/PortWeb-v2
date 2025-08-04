@@ -45,7 +45,7 @@ const Hero = () => {
                     </div>
                     
                     <a href="#contact">
-                        <button className="hidden md:block relative px-8 py-3 bg-gradient-to-t border-4 border-gray-900 hover:border-blue-200 from-blue-300 via-gray-700 to-blue-300 text-white rounded-4xl overflow-hidden group cursor-pointer hover:-rotate-6 duration-300">
+                        <button className="hidden md:block relative px-8 py-3 bg-gradient-to-t border-[3px] border-gray-900 hover:border-blue-200 from-blue-300 via-gray-700 to-blue-300 text-white rounded-4xl overflow-hidden group cursor-pointer hover:-rotate-6 duration-300">
                             <span className="absolute inset-0 bg-white opacity-50 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-500"></span>
                             <span className="relative z-10">GET IN TOUCH</span>
                         </button>

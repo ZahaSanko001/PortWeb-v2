@@ -41,9 +41,9 @@ const Navbar = () => {
             </div>
 
             {!isOpen && (
-                <div id="navi" className="md:hidden fixed top-0 left-0 flex gap-4 px-4 py-2 m-2 border-2 border-amber-400 rounded-3xl w-fit z-10">
+                <div id="navi" className="md:hidden fixed top-0 left-0 flex gap-4 px-4 py-2 m-2 w-fit rounded-4xl z-10">
                     <button onClick={() => setIsOpen(!isOpen)}>
-                        Menu
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="#FFCA28"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
                     </button>
                 </div>
             )}

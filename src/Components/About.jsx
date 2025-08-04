@@ -69,8 +69,8 @@ const About = () => {
     <section id="about">
        <div className="h-screen mt-2 flex flex-row items-center justify-between relative">
             <div className="hidden md:flex md:flex-col md:space-y-40">
-                <img src="masks/12.png" alt="" className="h-64 w-64 object-contain" ref={leftImg}/>
-                <img src="masks/9.png" alt="" className="h-64 w-64 object-contain" ref={leftImgb}/>
+                <img src="masks/12.webp" alt="" className="h-64 w-64 object-contain" ref={leftImg}/>
+                <img src="masks/9.webp" alt="" className="h-64 w-64 object-contain" ref={leftImgb}/>
             </div>
             
             <div ref={contentRef} className="flex flex-col gap-2 md:gap-[6rem] items-center h-full">
@@ -88,7 +88,7 @@ const About = () => {
                 </ul>
                 <p className="text-sm px-2 md:hidden">Hello i'm Raiyan (or Ryan), I'm a CompSci. student at <a className="text-amber-400" href="">Stamford</a>, i've been learning about Database management systems since early 2025 and been working on the backend for projects with the group <a className="text-amber-400" href="">Team81</a>. Currently i'm working on frontend projects and have been exploring animations with threeJS and GSAP. I've also worked on projects with C++ and Python frameworks. Right now i'm working on some JAVA projects. If any of these tech seems useful, make sure to get in touch</p>
                 <a href="#contact">
-                    <button className="md:block relative px-8 py-3 bg-gradient-to-t border-4 border-gray-900 hover:border-blue-200 from-blue-300 via-gray-700 to-blue-300 text-white rounded-4xl overflow-hidden group cursor-pointer">
+                    <button className="md:block relative px-8 py-3 bg-gradient-to-t border-2 md:border-3 md:border-gray-900 border-amber-900 md:hover:border-blue-200 md:from-blue-300 md:via-gray-700 md:to-blue-300 from-amber-300 via-amber-700 to-amber-300 text-white rounded-4xl overflow-hidden group cursor-pointer">
                         <span className="absolute inset-0 bg-white opacity-50 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-500"></span>
                         <span className="relative z-10">Contact Me</span>
                     </button>
@@ -96,8 +96,8 @@ const About = () => {
                 
             </div>
             <div className="hidden md:flex md:flex-col md:space-y-40" >
-                <img src="masks/10.png" alt="" className="h-64 w-64 object-contain" ref={rightImg}/>
-                <img src="masks/11.png" alt="" className="h-64 w-64 object-contain" ref={rightImgb}/>
+                <img src="masks/10.webp" alt="" className="h-64 w-64 object-contain" ref={rightImg}/>
+                <img src="masks/11.webp" alt="" className="h-64 w-64 object-contain" ref={rightImgb}/>
             </div>
        </div>
     </section>

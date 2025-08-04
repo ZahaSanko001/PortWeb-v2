@@ -346,51 +346,51 @@ const Carousel = () => {
          
             <div className="wrapper" >
                 <div className="flex space-x-1 min-w-max" ref={container2}>
-                    <div className="flex"><img src="scene/1.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/2.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/4.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/5.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/6.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/8.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/9.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/10.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/11.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/12.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/13.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/14.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/15.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/1.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/2.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/4.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/5.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/6.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/8.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/9.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/10.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/11.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/12.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/13.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/14.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/15.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
 
-                    <div className="flex"><img src="scene/1.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/2.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/4.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/5.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/6.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/8.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/9.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/10.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/11.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/12.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/13.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/14.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/15.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/1.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/2.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/4.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/5.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/6.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/8.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/9.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/10.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/11.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/12.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/13.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/14.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/15.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
                 </div>
             </div>
 
             <div className="wrapper" >
                 <div className="flex space-x-1 min-w-max" ref={container3}>
-                    <div className="flex"><img src="scene/1.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/2.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/4.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/5.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/6.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/8.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/9.jpg" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
-                    <div className="flex"><img src="scene/10.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/11.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/12.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/13.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/14.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
-                    <div className="flex"><img src="scene/15.jpg" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/1.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/2.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/4.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/5.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/6.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/8.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/9.webp" alt="" className="rounded-4xl h-fit w-40 md:w-60 "/></div>
+                    <div className="flex"><img src="scene1/10.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/11.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/12.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/13.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/14.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
+                    <div className="flex"><img src="scene1/15.webp" alt=""className="rounded-4xl h-fit w-40 md:w-60"  /></div>
                 </div>
             </div>
         
