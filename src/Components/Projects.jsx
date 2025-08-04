@@ -13,19 +13,19 @@ const Projects = () => {
     const projectData = [
         {
             id: 1,
-            icon: <a href=""><img className="h-full w-full object-cover rounded-2xl" src="Margarita.png" alt="" /></a>,
+            icon: <a href=""><img className="h-full w-full object-cover rounded-2xl" src="Margarita.webp" alt="" /></a>,
             title: "Margarita Ville",
             text: "A concept project for a Margarita Ville style bar (Will deploy soon)"
         },
         {
             id: 2,
-            icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.jpg" alt="" />,
+            icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.webp" alt="" />,
             title: "Vigener Cypher",
             text: "A vigener table and cypher generator for encryption and passphase use (Currently building the front)"
         },
         {
             id: 3,
-            icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.jpg" alt="" />,
+            icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.webp" alt="" />,
             title: "Concept Website",
             text: "(Currently building the front)"
         },
