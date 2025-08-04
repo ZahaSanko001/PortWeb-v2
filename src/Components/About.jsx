@@ -70,10 +70,10 @@ const About = () => {
                     <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> I like dabbling in different techs</li>
                     <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> Been learning about database management systems since early 2025</li>
                     <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> Worked on Express and mySQL projects with the group Team81</li>
-                    <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> Currently I'm working on frontend projects</li>
+                    <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> Currently working on frontend projects</li>
                     <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> Been learning about animations with GSAP and threeJS</li>
                     <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> I've also done a lot of projects with C++ and Python frameworks</li>
-                    <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> I'm also currently working on Java based projects</li>
+                    <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> I'm currently working on some Java projects as well</li>
                 </ul>
                 <p className="text-sm px-2 md:hidden">Hello i'm Raiyan (or Ryan), I'm a CompSci. student at <a className="text-amber-400" href="">Stamford</a>, i've been learning about Database management systems since early 2025 and been working on the backend for projects with the group <a className="text-amber-400" href="">Team81</a>. Currently i'm working on frontend projects and have been exploring animations with threeJS and GSAP. I've also worked on projects with C++ and Python frameworks. Right now i'm working on some JAVA projects. If any of these tech seems useful, make sure to get in touch</p>
                 <button className="md:block relative px-8 py-3 bg-gradient-to-t border-4 border-gray-900 hover:border-blue-200 from-blue-300 via-gray-700 to-blue-300 text-white rounded-4xl overflow-hidden group cursor-pointer">
@@ -83,7 +83,7 @@ const About = () => {
             </div>
             <div className="hidden md:flex md:flex-col md:space-y-40" >
                 <img src="masks/10.png" alt="" className="h-64 w-64 object-contain" ref={rightImg}/>
-                <img src="masks/11.png" alt="" className="h-64 w-80 object-contain" ref={rightImgb}/>
+                <img src="masks/11.png" alt="" className="h-64 w-64 object-contain" ref={rightImgb}/>
             </div>
        </div>
         </>

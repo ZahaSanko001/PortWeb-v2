@@ -19,6 +19,8 @@ const App = () => {
       <About/>
       <Projects/>
       <div className="h-screen"></div>
+      <div className="h-screen"></div>
+      <div className="h-screen"></div>
     </main>
   )
 }
