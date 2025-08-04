@@ -51,7 +51,7 @@ const Navbar = () => {
 
             {isOpen && (
                 <div id="navi" className="md:hidden fixed top-0 left-0 flex gap-4 px-4 py-2 m-2 border-2 rounded-3xl border-amber-400 w-fit z-10">
-                    <a href="#home" className="hover:text-amber-200" onClick={() => setIsOpen(false)}>
+                    <a href="#hero" className="hover:text-amber-200" onClick={() => setIsOpen(false)}>
                         Home
                     </a>
                     <a href="#about" className="hover:text-amber-200" onClick={() => setIsOpen(false)}>
