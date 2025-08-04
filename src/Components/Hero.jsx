@@ -25,7 +25,7 @@ const Hero = () => {
     return(
         <section id="hero" className="h-screen mt-20">
             <div className="relative flex flex-col gap-2 md:gap-0 justify-center items-center mx-16" ref={containerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-                <h1 className="text-9xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500">Hi! I'm Ryan</h1>
+                <h1 className="text-8xl md:text-9xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500">Hi! I'm Ryan</h1>
 
                 <img src="pfp.jpg" alt="" className="md:absolute w-40 h-40 md:w-120 md:h-120 top-24 rounded-full shadow-lg border-4 border-amber-300 md:border-gray-400" style={{
                     transform: `translate(${imgPos.x}px, ${imgPos.y}px)`,

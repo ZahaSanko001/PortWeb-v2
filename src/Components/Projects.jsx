@@ -65,7 +65,7 @@ const Projects = () => {
         <section id="projects">
             <div ref={contentRef} className="card-wrapper h-[200vh] flex flex-col gap-5 md:gap-12 items-center pt-16 md:mt-12  rounded-t-4xl md:rounded-t-[6rem] ">
                 
-                <h1 ref={texth} className="text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500">Projects</h1>
+                <h1 ref={texth} className="text-5xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500">Projects</h1>
                 <div className="min-h-screen w-full md:w-[90%] md:px-16 rounded-4xl md:rounded-[6rem] overflow-hidden bg-gradient-to-b from-blue-300 via-gray-800 to-blue-300">
                     {projectData.map((card) => {
                         return (

@@ -74,7 +74,7 @@ const About = () => {
             </div>
             
             <div ref={contentRef} className="flex flex-col gap-2 md:gap-[6rem] items-center h-full">
-                <h1 ref={texth} className="border-white text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500"  >ABOUT ME</h1>
+                <h1 ref={texth} className="border-white text-5xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500"  >ABOUT ME</h1>
                 <ul className="hidden md:block md:space-y-4">
                     <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> Hello! I'm Raiyan or (Ryan)</li>
                     <li className="flex text-sm"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg> I'm a compSci. student at Stamford</li>
