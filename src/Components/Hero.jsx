@@ -23,7 +23,7 @@ const Hero = () => {
     };
 
     return(
-        <section className="h-screen mt-20">
+        <section id="hero" className="h-screen mt-20">
             <div className="relative flex flex-col gap-2 md:gap-0 justify-center items-center mx-16" ref={containerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
                 <h1 className="text-9xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500">Hi! I'm Ryan</h1>
 
@@ -34,11 +34,12 @@ const Hero = () => {
 
                 <div className="md:absolute w-full flex flex-col md:flex-row justify-between items-center top-60 mx-10">
                     <p className="hidden md:block w-sm text-lg text-transparent bg-clip-text bg-gradient-to-t from-gray-200 via-gray-300 to-gray-400">A SOFTWARE DEVELOPER PASSIONATE ABOUT CRAFTING BOLD AND MEMORABLE PROJECTS WORKING WITH NEW TECH EVERYDAY</p>
-
-                    <button className="hidden md:block relative px-8 py-3 bg-gradient-to-t border-4 border-gray-900 hover:border-blue-200 from-blue-300 via-gray-700 to-blue-300 text-white rounded-4xl overflow-hidden group cursor-pointer hover:-rotate-6 duration-300">
-                        <span className="absolute inset-0 bg-white opacity-50 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-500"></span>
-                        <span className="relative z-10">GET IN TOUCH</span>
-                    </button>
+                    <a href="#contact">
+                        <button className="hidden md:block relative px-8 py-3 bg-gradient-to-t border-4 border-gray-900 hover:border-blue-200 from-blue-300 via-gray-700 to-blue-300 text-white rounded-4xl overflow-hidden group cursor-pointer hover:-rotate-6 duration-300">
+                            <span className="absolute inset-0 bg-white opacity-50 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-500"></span>
+                            <span className="relative z-10">GET IN TOUCH</span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </section>

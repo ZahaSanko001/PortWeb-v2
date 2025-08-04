@@ -7,6 +7,7 @@ import Hero from './Components/Hero';
 import Carousel from "./Components/Carousel";
 import About from "./Components/About";
 import Projects from "./Components/Projects";
+import Contact from "./Components/Contact";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -18,9 +19,7 @@ const App = () => {
       <Carousel/>
       <About/>
       <Projects/>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
+      <Contact/>
     </main>
   )
 }
