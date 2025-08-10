@@ -19,12 +19,18 @@ const Projects = () => {
         },
         {
             id: 2,
+            icon: <img className="h-full w-full object-cover rounded-2xl" src="study-archive.webp" alt="" />,
+            title: "Study-Archive",
+            text: "A project for university students to find study materials."
+        },
+        {
+            id: 3,
             icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.webp" alt="" />,
             title: "Vigener Cypher",
             text: "A vigener table and cypher generator for encryption and passphase use (Currently building the front)"
         },
         {
-            id: 3,
+            id: 4,
             icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.webp" alt="" />,
             title: "Concept Website",
             text: "(Currently building the front)"
@@ -55,7 +61,7 @@ const Projects = () => {
 
 
         tl.to(".card", {
-            height: 130,
+            height: 0,
             stagger: 0.5,
         })
     })
@@ -77,7 +83,7 @@ const Projects = () => {
 
                                 <div className="flex flex-col md:flex-row items-center justify-between">
                                     <p className="w-full md:w-[450px] opacity-70">{card.text}</p>
-                                    <div className="w-28 h-28 md:w-56 md:h-56">
+                                    <div className="w-fit h-28 md:w-fit md:h-56">
                                     {card.icon}
                                     </div>
                                 </div>
