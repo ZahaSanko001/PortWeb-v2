@@ -13,14 +13,14 @@ const Projects = () => {
     const projectData = [
         {
             id: 1,
-            icon: <a href=""><img className="h-full w-full object-cover rounded-2xl" src="Margarita.webp" alt="" /></a>,
+            icon: <img className="h-full w-full object-cover rounded-2xl" src="Margarita.webp" alt="" />,
             title: "Margarita Ville",
             text: "A concept project for a Margarita Ville style bar (Will deploy soon)"
         },
         {
             id: 2,
-            icon: <img className="h-full w-full object-cover rounded-2xl" src="study-archive.webp" alt="" />,
-            title: "Study-Archive",
+            icon: <a href="https://study-archive.pages.dev"><img className="h-full w-full object-cover rounded-2xl" src="study-archive.webp" alt="" /></a>,
+            title: <a href="https://study-archive.pages.dev">Study-Archive</a>,
             text: "A project for university students to find study materials."
         },
         {
