@@ -107,8 +107,8 @@ const Carousel = () => {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3v19" /><path d="M18 11.227c0 3.273 -1.812 4.77 -6 9.273c-4.188 -4.503 -6 -6 -6 -9.273c0 -4.454 3.071 -6.927 6 -9.227c2.929 2.3 6 4.773 6 9.227z" /></svg>
-                    MongoDB
+                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><text x="12" y="15" textAnchor="middle" fontSize="7" fontWeight="bold" fill="currentColor" stroke="none">.NET</text></svg>
+                    .NET
                     </div>
 
                     <div className="flex flex-col items-center">
@@ -132,8 +132,8 @@ const Carousel = () => {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 12h4" /><path d="M20 10v4" /><path d="M11 12h4" /><path d="M13 10v4" /><path d="M9 9a3 3 0 0 0 -3 -3h-.5a3.5 3.5 0 0 0 -3.5 3.5v5a3.5 3.5 0 0 0 3.5 3.5h.5a3 3 0 0 0 3 -3" /></svg>
-                    CPP
+                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+                    C#
                     </div>
 
                     <div className="flex flex-col items-center">
@@ -171,8 +171,8 @@ const Carousel = () => {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3v19" /><path d="M18 11.227c0 3.273 -1.812 4.77 -6 9.273c-4.188 -4.503 -6 -6 -6 -9.273c0 -4.454 3.071 -6.927 6 -9.227c2.929 2.3 6 4.773 6 9.227z" /></svg>
-                    MongoDB
+                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><text x="12" y="15" textAnchor="middle" fontSize="7" fontWeight="bold" fill="currentColor" stroke="none">.NET</text></svg>
+                    .NET
                     </div>
 
                     <div className="flex flex-col items-center">
@@ -196,8 +196,8 @@ const Carousel = () => {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 12h4" /><path d="M20 10v4" /><path d="M11 12h4" /><path d="M13 10v4" /><path d="M9 9a3 3 0 0 0 -3 -3h-.5a3.5 3.5 0 0 0 -3.5 3.5v5a3.5 3.5 0 0 0 3.5 3.5h.5a3 3 0 0 0 3 -3" /></svg>
-                    CPP
+                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+                    C#
                     </div>
 
                     <div className="flex flex-col items-center">
@@ -237,8 +237,8 @@ const Carousel = () => {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3v19" /><path d="M18 11.227c0 3.273 -1.812 4.77 -6 9.273c-4.188 -4.503 -6 -6 -6 -9.273c0 -4.454 3.071 -6.927 6 -9.227c2.929 2.3 6 4.773 6 9.227z" /></svg>
-                    MongoDB
+                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><text x="12" y="15" textAnchor="middle" fontSize="7" fontWeight="bold" fill="currentColor" stroke="none">.NET</text></svg>
+                    .NET
                     </div>
 
                     <div className="flex flex-col items-center">
@@ -262,8 +262,8 @@ const Carousel = () => {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 12h4" /><path d="M20 10v4" /><path d="M11 12h4" /><path d="M13 10v4" /><path d="M9 9a3 3 0 0 0 -3 -3h-.5a3.5 3.5 0 0 0 -3.5 3.5v5a3.5 3.5 0 0 0 3.5 3.5h.5a3 3 0 0 0 3 -3" /></svg>
-                    CPP
+                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+                    C#
                     </div>
 
                     <div className="flex flex-col items-center">
@@ -301,8 +301,8 @@ const Carousel = () => {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3v19" /><path d="M18 11.227c0 3.273 -1.812 4.77 -6 9.273c-4.188 -4.503 -6 -6 -6 -9.273c0 -4.454 3.071 -6.927 6 -9.227c2.929 2.3 6 4.773 6 9.227z" /></svg>
-                    MongoDB
+                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><text x="12" y="15" textAnchor="middle" fontSize="7" fontWeight="bold" fill="currentColor" stroke="none">.NET</text></svg>
+                    .NET
                     </div>
 
                     <div className="flex flex-col items-center">
@@ -326,8 +326,8 @@ const Carousel = () => {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 12h4" /><path d="M20 10v4" /><path d="M11 12h4" /><path d="M13 10v4" /><path d="M9 9a3 3 0 0 0 -3 -3h-.5a3.5 3.5 0 0 0 -3.5 3.5v5a3.5 3.5 0 0 0 3.5 3.5h.5a3 3 0 0 0 3 -3" /></svg>
-                    CPP
+                        <svg  className="w-15 h-15 md:w-20 md:h-20"xmlns="http://www.w3.org/2000/svg"  width="100"  height="100"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+                    C#
                     </div>
 
                     <div className="flex flex-col items-center">

@@ -13,28 +13,32 @@ const Projects = () => {
     const projectData = [
         {
             id: 1,
-            icon: <img className="h-full w-full object-cover rounded-2xl" src="Margarita.webp" alt="" />,
-            title: "Margarita Ville",
-            text: "A concept project for a Margarita Ville style bar (Will deploy soon)"
+            icon: <a href="https://versitium.com"><img className="h-full w-full object-cover rounded-2xl" src="Versitium.png" alt="" /></a>,
+            title: <a href="https://versitium.com">Versitium</a>,
+            text: "A SaaS learning management application with complete SEO, Marketing, Analytics and Payment gateway integration. With complete student features like video and downloadable lessons and various quizes, as well as Tutor side management and article publication and finally complete Admin and Moderator controls.",
+            techs: [".NET", "ASP NET Core", "Razor Pages"],
         },
         {
             id: 2,
             icon: <a href="https://study-archive.pages.dev"><img className="h-full w-full object-cover rounded-2xl" src="study-archive.webp" alt="" /></a>,
             title: <a href="https://study-archive.pages.dev">Study-Archive</a>,
-            text: "A project for university students to find study materials."
+            text: "A project for university students to find study materials.",
+            techs: ["JavaScript", "TailwindCss", "Cloudflare Pages"],
         },
         {
             id: 3,
-            icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.webp" alt="" />,
-            title: "Vigener Cypher",
-            text: "A vigener table and cypher generator for encryption and passphase use (Currently building the front)"
+            icon: <a href="https://github.com/ZahaSanko001/TaskForge"><img className="h-full w-full object-cover rounded-2xl" src="github-icon.webp" alt="" /></a>,
+            title: <a href="https://github.com/ZahaSanko001/AttendanceSheetServer">Facial Recognition Attendance System (Backend)</a>,
+            text: "A facial recognition system for attendance tracking",
+            techs: ["Spring Boot" ,"Java", "Python", "OpenCV", "FastApi", "MySQL"],
         },
         {
             id: 4,
-            icon: <img className="h-full w-full object-cover rounded-2xl" src="notFound.webp" alt="" />,
-            title: "Concept Website",
-            text: "(Currently building the front)"
-        },
+            icon: <a href="https://github.com/ZahaSanko001/TaskForge"><img className="h-full w-full object-cover rounded-2xl" src="github-icon.webp" alt="" /></a>,
+            title: <a href="https://github.com/ZahaSanko001/TaskForge">Group Project Manager</a>,
+            text: "A project management system for teams to keep track of progress and deadlines",
+            techs: ["Asp Net Core", "C#", "Sql Server"],
+        }
     ];
 
     useGSAP(() => {
@@ -82,7 +86,16 @@ const Projects = () => {
                                 </div>
 
                                 <div className="flex flex-col md:flex-row items-center justify-between">
-                                    <p className="w-full md:w-[450px] opacity-70">{card.text}</p>
+                                    <div className="w-full md:w-[450px]">
+                                        <p className="opacity-70 text-xs">{card.text}</p>
+                                        <div className="mt-5 flex flex-wrap gap-2">
+                                            {card.techs.map((tech) => (
+                                                <span key={tech} className="rounded-full border border-white/30 px-3 py-1 text-xs text-blue-100">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
                                     <div className="w-fit h-28 md:w-fit md:h-56">
                                     {card.icon}
                                     </div>

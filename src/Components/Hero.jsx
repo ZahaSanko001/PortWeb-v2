@@ -25,16 +25,16 @@ const Hero = () => {
     return(
         <section id="hero" className="h-screen mt-20">
             <div className="relative flex flex-col gap-2 md:gap-0 justify-center items-center mx-16" ref={containerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-                <h1 className="text-8xl md:text-9xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-[#A4133C] md:via-[hsl(343,79%,25%)] md:to-[hsl(343,79%,10%)]">Hi! I'm Ryan</h1>
+                <h1 className="md:whitespace-nowrap md:text-center md:text-[clamp(3.5rem,10vw,10rem)] md:leading-none md:tracking-[-0.08em] text-8xl text-transparent bg-clip-text bg-gradient-to-r md:bg-gradient-to-t from-amber-500 via-amber-300 to-amber-200 md:from-white md:via-gray-300 md:to-gray-500">Hi! I'm Ryan</h1>
 
-                <img src="pfp.webp" alt="" className="md:absolute w-40 h-40 md:w-120 md:h-120 top-24 rounded-full shadow-lg border-4 border-amber-300 md:border-gray-400" style={{
+                <img src="pfp.jpg" alt="" className="md:absolute w-40 h-40 md:w-80 md:h-80 top-24 rounded-full shadow-lg border-4 border-amber-300 md:border-gray-400" style={{
                     transform: `translate(${imgPos.x}px, ${imgPos.y}px)`,
                     transition: 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)'
                 }}/>
 
                 <div className="md:absolute w-full flex flex-col md:flex-row justify-between items-center top-60 mx-10">
                     <div>
-                        <p className="hidden md:block w-sm text-lg text-transparent bg-clip-text bg-gradient-to-t from-gray-200 via-gray-300 to-gray-400">A SOFTWARE DEVELOPER PASSIONATE ABOUT CRAFTING BOLD AND MEMORABLE PROJECTS WORKING WITH NEW TECH EVERYDAY</p>
+                        <p className="hidden md:block w-sm text-md text-transparent bg-clip-text bg-gradient-to-t from-gray-200 via-gray-300 to-gray-400">A Fullstack Developer building responsive and robust SaaS applications with .NET Spring Boot and React</p>
                         <div className="flex p-4 gap-4 ">
                             <a className="hover:text-blue-200" href="https://x.com/raiyan_k"><svg  xmlns="http://www.w3.org/2000/svg"  width="36"  height="36"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg></a>
 
@@ -44,10 +44,10 @@ const Hero = () => {
                         </div>
                     </div>
                     
-                    <a href="#contact">
+                    <a href="#projects">
                         <button className="hidden md:block relative px-8 py-3 bg-gradient-to-t border-[3px] border-gray-900 hover:border-blue-200 from-blue-300 via-gray-700 to-blue-300 text-white rounded-4xl overflow-hidden group cursor-pointer hover:-rotate-6 duration-300">
                             <span className="absolute inset-0 bg-white opacity-50 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-500"></span>
-                            <span className="relative z-10">GET IN TOUCH</span>
+                            <span className="relative z-10">View Projects</span>
                         </button>
                     </a>
                 </div>
