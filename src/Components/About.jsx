@@ -69,8 +69,8 @@ const About = () => {
     <section id="about">
        <div className="h-screen mb-20 flex flex-row items-center justify-between relative">
             <div className="hidden md:flex md:flex-col md:space-y-40">
-                <img src="masks/12.webp" alt="" className="h-64 w-64 object-contain" ref={leftImg}/>
-                <img src="masks/9.webp" alt="" className="h-64 w-64 object-contain" ref={leftImgb}/>
+                <img src="masks/12.png" alt="" className="h-64 w-64 object-contain" ref={leftImg}/>
+                <img src="masks/hero-left-leaf.png" alt="" className="h-64 w-64 object-contain" ref={leftImgb}/>
             </div>
             
             <div ref={contentRef} className="flex flex-col gap-2 md:gap-[6rem] items-center h-full">
@@ -95,8 +95,8 @@ const About = () => {
                 
             </div>
             <div className="hidden md:flex md:flex-col md:space-y-40" >
-                <img src="masks/10.webp" alt="" className="h-64 w-64 object-contain" ref={rightImg}/>
-                <img src="masks/11.webp" alt="" className="h-64 w-64 object-contain" ref={rightImgb}/>
+                <img src="masks/10.png" alt="" className="h-64 w-64 object-contain" ref={rightImg}/>
+                <img src="masks/hero-right-leaf.png" alt="" className="h-64 w-64 object-contain" ref={rightImgb}/>
             </div>
        </div>
     </section>
