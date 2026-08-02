@@ -13,15 +13,31 @@
   }
 }
 
-html,
 body {
-    width: 100%;
+    margin: 0;
+    min-height: 100vh;
     background-color: #1A1A1A;
     color: #FFFFFF;
     font-family: var(--font-sans);
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+
     position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed; /* or absolute */
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.1;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+
+    background-size: 42px 42px;
+
+    z-index: -1; /* Behind the page content */
 }
 
 /* main {

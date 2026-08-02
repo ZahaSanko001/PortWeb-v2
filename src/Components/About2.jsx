@@ -127,7 +127,7 @@ const About = () => {
                 {/* terminal window */}
                 <div
                     ref={terminalRef}
-                    className="w-full max-w-2xl rounded-xl border border-white/10 bg-[#1A1A1A] overflow-hidden"
+                    className="w-full max-w-2xl rounded-xl border border-amber-400/40 shadow-[0_20px_40px_-20px_rgba(245,166,35,0.25)] bg-[#1A1A1A] overflow-hidden"
                 >
                     <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/[0.02]">
                         {dotColors.map((c, i) => (
