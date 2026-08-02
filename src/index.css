@@ -6,6 +6,13 @@
     --font-sans: "Inter", ui-sans-serif, system-ui;
 }
 
+@theme {
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
 html,
 body {
     width: 100%;

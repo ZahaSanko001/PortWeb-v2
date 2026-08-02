@@ -18,7 +18,7 @@ const projectData = [
     {
         id: 2,
         file: "study-archive.js",
-        image: "study-archive.webp",
+        image: "study-archive.png",
         isLogo: false,
         link: "https://study-archive.pages.dev",
         title: "Study Archive",
