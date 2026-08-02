@@ -34,7 +34,7 @@ const Hero = () => {
 
                 <div className="md:absolute w-full flex flex-col md:flex-row justify-between items-center top-60 mx-10">
                     <div>
-                        <p className="hidden md:block w-sm text-md text-transparent bg-clip-text bg-gradient-to-t from-gray-200 via-gray-300 to-gray-400">A Fullstack Developer building responsive and robust SaaS applications with .NET Spring Boot and React</p>
+                        <p className="hidden md:block w-sm text-md text-transparent bg-clip-text bg-gradient-to-t from-gray-200 via-gray-300 to-gray-400">A Fullstack Developer building responsive and robust SaaS applications with .NET Spring Boot Express and React</p>
                         <div className="flex p-4 gap-4 ">
                             <a className="hover:text-blue-200" href="https://x.com/raiyan_k"><svg  xmlns="http://www.w3.org/2000/svg"  width="36"  height="36"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg></a>
 
