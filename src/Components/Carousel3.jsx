@@ -5,14 +5,14 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const packages = [
-    { name: "react", version: "19.0.0" },
-    { name: "tailwindcss", version: "4.0.0" },
-    { name: "express", version: "4.21.0" },
-    { name: "asp.net-core", version: "9.0.1" },
+    { name: "react", version: "19.2.8" },
+    { name: "tailwindcss", version: "4.3.3" },
+    { name: "express", version: "5.2.1" },
+    { name: "asp.net-core", version: "10.0.10" },
     { name: "spring-boot", version: "4.1.0" },
     { name: "fastApi", version: "0.141.1" },
-    { name: "sql-server", version: "2022.1" },
-    { name: "docker", version: "27.3.1" },
+    { name: "sql-server", version: "17.0.4065.4" },
+    { name: "docker", version: "29.7.1" },
 ];
 
 const dotColors = ["bg-amber-400/70", "bg-sky-400/70", "bg-emerald-400/70"];
