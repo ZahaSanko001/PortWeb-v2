@@ -83,8 +83,8 @@ const Carousel = () => {
             `}</style>
 
             {/* fade edges so the loop point isn't visible */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#1A1A1A] to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#1A1A1A] to-transparent z-10" />
+{/*             <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#1A1A1A] to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#1A1A1A] to-transparent z-10" /> */}
 
             {/* tech pills, two rows moving opposite directions */}
             <div className="flex flex-nowrap w-max gap-3 animate-[marquee-left_40s_linear_infinite] hover:[animation-play-state:paused]">

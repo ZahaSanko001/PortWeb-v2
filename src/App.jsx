@@ -7,6 +7,8 @@ import Hero from './Components/Hero';
 import Hero2 from './Components/Hero2';
 import Carousel from "./Components/Carousel";
 import Carousel2 from "./Components/Carousel2";
+import Carousel3 from "./Components/Carousel3";
+import Carousel3_1 from "./Components/Carousel3_1";
 import About from "./Components/About";
 import About2 from "./Components/About2";
 import Projects from "./Components/Projects";
@@ -31,7 +33,7 @@ const App = () => {
     /> */}
       <Navbar2/>
       <Hero2/>
-      <Carousel2/>
+      <Carousel3/>
       <Projects2/>
       <Experience2/>
       <About2/>
