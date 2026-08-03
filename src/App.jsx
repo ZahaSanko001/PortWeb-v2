@@ -2,6 +2,7 @@ import React  from "react";
 import gsap from 'gsap';
 import { ScrollTrigger, SplitText } from "gsap/all";
 import Navbar from './Components/Navbar';
+import Navbar2 from './Components/Navbar2';
 import Hero from './Components/Hero';
 import Hero2 from './Components/Hero2';
 import Carousel from "./Components/Carousel";
@@ -13,6 +14,7 @@ import Projects2 from "./Components/Projects2";
 import Experience from "./Components/Experience";
 import Experience2 from "./Components/Experience2";
 import Contact from "./Components/Contact";
+import Contact2 from "./Components/Contact2";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -27,13 +29,13 @@ const App = () => {
             backgroundSize: "42px 42px",
         }}
     /> */}
-      <Navbar/>
+      <Navbar2/>
       <Hero2/>
       <Carousel2/>
       <Projects2/>
       <Experience2/>
       <About2/>
-      <Contact/>
+      <Contact2/>
     </main>
   )
 }

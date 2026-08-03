@@ -111,7 +111,7 @@ const Hero = () => {
                     </span>
                 </div>
 
-                <h1 className="boot-line text-4xl sm:text-5xl md:text-[clamp(3.5rem,9vw,8rem)] leading-none tracking-tight text-white">
+                <h1 className="boot-line font-mono whitespace-nowrap text-4xl sm:text-5xl md:text-[clamp(3.5rem,9vw,8rem)] leading-none tracking-tight text-white">
                     Hi! I'm Ryan
                     <span className="inline-block w-[0.4ch] h-[0.8em] ml-2 align-middle bg-amber-400 animate-pulse" />
                 </h1>

@@ -5,7 +5,7 @@ const Contact = () => {
         <section id="contact">
             <div className="flex flex-col md:flex-row justify-around items-center h-[25rem] bg-gradient-to-t from-amber-400/60 via-[#1A1A1A]/50 border-t border-amber-200/30 rounded-t-[4rem]">
                 <div>
-                    <img src="pfp.webp" alt="" className="h-32 w-32 md:h-60 md:w-60 rounded-full border-4 border-amber-300 md:border-gray-400"/>
+                    <img src="pfp.webp" alt="" className="h-32 w-32 md:h-60 md:w-60 rounded-full border-4 border-amber-300"/>
                 </div>
 
                 <div className="flex flex-col gap-4 text-center">
