@@ -17,6 +17,16 @@ const projectData = [
     },
     {
         id: 2,
+        file: "Tabulae.tsx",
+        image: "Tabulae.png",
+        isLogo: false,
+        link: "https://github.com/ZahaSanko001/Tabulae",
+        title: "Tabulae",
+        text: "Tabulae is a database schema visualization tool. Connect it to a PostgreSQL or SQL Server database and explore its tables, columns, primary keys, foreign keys, and relationships as an interactive diagram.",
+        techs: ["ExpressJs", "TypeScript", "React", "D3.js"],
+    },
+    {
+        id: 3,
         file: "MetricForge.cs",
         image: "MetricForge.png",
         isLogo: false,
@@ -26,7 +36,7 @@ const projectData = [
         techs: ["C#", "WPF", ".NET"],
     },
     {
-        id: 3,
+        id: 4,
         file: "attendance-service.java",
         image: "github-icon.webp",
         isLogo: true,
@@ -36,7 +46,7 @@ const projectData = [
         techs: ["Spring Boot", "Java", "Python", "OpenCV", "FastAPI", "MySQL"],
     },
     {
-        id: 4,
+        id: 5,
         file: "task-forge.cs",
         image: "github-icon.webp",
         isLogo: true,
