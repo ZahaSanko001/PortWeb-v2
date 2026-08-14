@@ -9,10 +9,10 @@ const aboutLines = [
     <>I'm a CS student at <a className="text-amber-400 hover:underline" href="https://cse.stamforduniversity.edu.bd/">Stamford University</a>.</>,
     <>I've worked on real SaaS products for various clients.</>,
     <>I like dabbling in different techs, but mostly focus on backend development.</>,
-    <>I build with good system design, software architecture, and SOLID practices.</>,
-    <>Currently working part-time at <a className="text-amber-400 hover:underline" href="https://californiumcore.com">Californium Core</a>.</>,
-    <>I've worked with Spring Boot, Express.js, ASP.NET Core, and React.</>,
-    <>Currently focused mostly on .NET projects.</>,
+    <>I build with good system design, software architecture, and 'SOLID' code practices.</>,
+    <>Worked professionally with <a className="text-amber-400 hover:underline" href="https://californiumcore.com">Californium Core</a> on SaaS projects.</>,
+    <>I've worked with many stacks of Spring Boot, Express.js, ASP.NET Core</>,
+    <>Currently focused mostly on database migration automation systems</>,
     <>Always learning — keeping up with industry practices and the latest trends.</>,
 ];
 
