@@ -22,8 +22,8 @@ const projectData = [
         isLogo: false,
         link: "https://github.com/ZahaSanko001/Tabulae",
         title: "Tabulae",
-        text: "Tabulae is a database schema visualization tool. Connect it to a PostgreSQL or SQL Server database and explore its tables, columns, primary keys, foreign keys, and relationships as an interactive diagram.",
-        techs: ["ExpressJs", "TypeScript", "React", "D3.js"],
+        text: "Tabulae is a database schema visualization tool. Connect it to a PostgreSQL, SQL Server, MySQL, or SQLite database and explore its tables, columns, primary keys, foreign keys, and relationships as an interactive diagram.",
+        techs: ["ExpressJs", "TypeScript", "ReactFlow", "Dagre"],
     },
     {
         id: 3,

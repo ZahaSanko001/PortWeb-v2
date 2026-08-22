@@ -72,7 +72,7 @@ const Contact = () => {
         <footer
             id="contact"
             ref={sectionRef}
-            className="relative border-t border-amber-400/64 bg-gradient-to-b from-amber-400/10 via-[#1A1A1A] to-[#1A1A1A] pt-20 md:pt-28 pb-10 px-4 sm:px-6 md:px-8 overflow-hidden"
+            className="relative border-t border-amber-400/64 bg-gradient-to-b from-amber-400/10 to-black pt-20 md:pt-28 pb-10 px-4 sm:px-6 md:px-8 overflow-hidden"
         >
 {/*             <div
                 className="pointer-events-none absolute inset-0 opacity-[0.05]"
