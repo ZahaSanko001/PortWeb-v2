@@ -16,8 +16,10 @@ import {
     SiDotnet,
     SiSpringboot,
     SiFastapi,
-    SiMysql as SiMicrosoftsqlserver,
+    SiMysql,
     SiDocker,
+    SiRust,
+    SiTauri
 } from "react-icons/si";
 
 const packages = [
@@ -27,8 +29,10 @@ const packages = [
     { name: "asp.net-core", version: "10.0.10", Icon: SiDotnet, color: "#8B6FF0" },
     { name: "spring-boot", version: "4.1.0", Icon: SiSpringboot, color: "#6DB33F" },
     { name: "fastApi", version: "0.141.1", Icon: SiFastapi, color: "#14B8A6" },
-    { name: "mysql", version: "17.0.4065.4", Icon: SiMicrosoftsqlserver, color: "#E04B49" },
+    { name: "mysql", version: "17.0.4065.4", Icon: SiMysql, color: "#E04B49" },
     { name: "docker", version: "29.7.1", Icon: SiDocker, color: "#2496ED" },
+    { name: "rust", version: "1.98.1", Icon: SiRust, color: "#796a6a" },
+    { name: "tauri", version: "2.12.0", Icon: SiTauri, color: "#24C8D8" },
 ];
 
 // Wraps v into [min, max) so the loop is seamless.
