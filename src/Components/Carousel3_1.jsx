@@ -1,146 +1,165 @@
 import React, { useRef } from "react";
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(ScrollTrigger);
+import {
+    motion,
+    useScroll,
+    useSpring,
+    useTransform,
+    useMotionValue,
+    useVelocity,
+    useAnimationFrame,
+    useReducedMotion,
+} from "motion/react";
+import {
+    SiReact,
+    SiTailwindcss,
+    SiExpress,
+    SiDotnet,
+    SiSpringboot,
+    SiFastapi,
+    SiMysql as SiMicrosoftsqlserver,
+    SiDocker,
+} from "react-icons/si";
 
 const packages = [
-    { name: "react", version: "19.0.0" },
-    { name: "tailwindcss", version: "4.0.0" },
-    { name: "express", version: "4.21.0" },
-    { name: "asp.net-core", version: "9.0.1" },
-    { name: "spring-boot", version: "4.1.0" },
-    { name: "fastApi", version: "0.141.1" },
-    { name: "sql-server", version: "2022.1" },
-    { name: "docker", version: "27.3.1" },
+    { name: "react", version: "19.2.8", Icon: SiReact, color: "#61DAFB" },
+    { name: "tailwindcss", version: "4.3.3", Icon: SiTailwindcss, color: "#06B6D4" },
+    { name: "express", version: "5.2.1", Icon: SiExpress, color: "#E5E7EB" },
+    { name: "asp.net-core", version: "10.0.10", Icon: SiDotnet, color: "#8B6FF0" },
+    { name: "spring-boot", version: "4.1.0", Icon: SiSpringboot, color: "#6DB33F" },
+    { name: "fastApi", version: "0.141.1", Icon: SiFastapi, color: "#14B8A6" },
+    { name: "mysql", version: "17.0.4065.4", Icon: SiMicrosoftsqlserver, color: "#E04B49" },
+    { name: "docker", version: "29.7.1", Icon: SiDocker, color: "#2496ED" },
 ];
 
-const dotColors = ["bg-amber-400/70", "bg-sky-400/70", "bg-emerald-400/70"];
+// Wraps v into [min, max) so the loop is seamless.
+const wrap = (min, max, v) => {
+    const range = max - min;
+    return ((((v - min) % range) + range) % range) + min;
+};
 
-const Carousel = () => {
-    const sectionRef = useRef();
-    const terminalRef = useRef();
-    const progressBarRef = useRef();
-    const buildStatusRef = useRef();
-
-    useGSAP(() => {
-        // Packages "install" one by one as they scroll into view — plain
-        // stagger reveal, replays if you scroll back up and down again.
-        gsap.from(".skill-line", {
-            opacity: 0,
-            x: -16,
-            duration: 0.6,
-            stagger: 0.15,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: terminalRef.current,
-                start: "top 80%",
-                toggleActions: "restart none restart none",
+const PackageItem = ({ pkg, outlined }) => (
+    <span className="inline-flex items-baseline gap-3 md:gap-5 pr-10 md:pr-20 whitespace-nowrap">
+        <pkg.Icon
+            className="self-center h-[0.8em] w-[0.8em] shrink-0"
+            style={{ color: pkg.color }}
+            aria-hidden="true"
+        />
+        <span
+            className={
+                outlined
+                    ? "text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.45)]"
+                    : "text-white/80"
             }
-        });
+        >
+            {pkg.name}
+        </span>
+        <span className="text-amber-400/70 text-[0.32em] [-webkit-text-stroke:0]">
+            {pkg.version}
+        </span>
+    </span>
+);
 
-        gsap.from(".install-summary", {
-            opacity: 0,
-            y: 10,
-            duration: 0.6,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: terminalRef.current,
-                start: "top 55%",
-                toggleActions: "restart none restart none",
-            }
-        });
+// One full-width band. It drifts at baseVelocity (% of its own width per
+// second), speeds up with scroll speed, and reverses when you scroll up.
+const VelocityRow = ({ items, baseVelocity, velocityFactor, skewX, outlined }) => {
+    const baseX = useMotionValue(0);
+    const direction = useRef(1);
+    const reduceMotion = useReducedMotion();
 
-        // The only scroll-linked (scrubbed) animation: a single bar filling
-        // 0 -> 1 across this section's own height. Percentage-based, so it
-        // holds up at any viewport size with no pixel math to recompute.
-        gsap.fromTo(
-            progressBarRef.current,
-            { scaleX: 0 },
-            {
-                scaleX: 1,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 50%",
-                    end: "bottom 70%",
-                    scrub: 0.4,
-                }
-            }
-        );
+    useAnimationFrame((_, delta) => {
+        if (reduceMotion) return;
+        let moveBy = direction.current * baseVelocity * (delta / 1000);
+        const factor = velocityFactor.get();
+        if (factor < 0) direction.current = -1;
+        else if (factor > 0) direction.current = 1;
+        moveBy += direction.current * moveBy * factor;
+        baseX.set(baseX.get() + moveBy);
+    });
 
-        gsap.from(buildStatusRef.current, {
-            opacity: 0,
-            y: 10,
-            duration: 0.6,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "bottom 85%",
-                toggleActions: "restart none restart none",
-            }
-        });
-    }, { scope: sectionRef });
+    // Two identical halves, so sliding -50% -> 0% loops with no visible seam.
+    const x = useTransform(baseX, (v) => `${wrap(-50, 0, v)}%`);
 
     return (
-        <section
-            ref={sectionRef}
-            className="relative py-20 md:py-28 px-4 sm:px-6 md:px-8 overflow-hidden"
+        <motion.div
+            style={{ x, skewX }}
+            className="flex w-max will-change-transform font-mono font-bold leading-none text-4xl sm:text-6xl md:text-8xl"
         >
-{/*             <div
-                className="pointer-events-none absolute inset-0 opacity-[0.05]"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-                    backgroundSize: "42px 42px",
-                }}
-            /> */}
+            {[...items, ...items].map((pkg, i) => (
+                <PackageItem key={`${pkg.name}-${i}`} pkg={pkg} outlined={outlined} />
+            ))}
+        </motion.div>
+    );
+};
 
-            <div
-                ref={terminalRef}
-                className="relative max-w-2xl mx-auto border-l-2 border-amber-400/30 pl-5 md:pl-8"
-            >
-                <p className="font-mono text-xs md:text-sm text-white/40 mb-4">
+const Carousel = () => {
+    const sectionRef = useRef(null);
+
+    // Page-level scroll speed drives the marquee speed, direction and skew.
+    const { scrollY } = useScroll();
+    const scrollVelocity = useVelocity(scrollY);
+    const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
+    const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], { clamp: false });
+    const skewX = useTransform(smoothVelocity, [-2000, 2000], [5, -5]);
+
+    // Section-level progress drives the full-width build bar + final status.
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start 85%", "end 35%"],
+    });
+    const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.4 });
+    const statusOpacity = useTransform(scrollYProgress, [0.75, 0.95], [0, 1]);
+    const statusY = useTransform(scrollYProgress, [0.75, 0.95], [8, 0]);
+
+    return (
+        <section ref={sectionRef} className="relative w-full overflow-hidden py-16 md:py-24">
+            {/* edge fades so the bands dissolve into the page instead of hard-cutting */}
+            {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-[#1A1A1A] to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-[#1A1A1A] to-transparent z-10" /> */}
+
+            <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 mb-6 md:mb-10 font-mono text-xs md:text-sm text-white/40">
+                <p>
                     <span className="text-amber-400">$</span> npm install @ryan/skillset
                 </p>
-
-                <ul className="space-y-2 mb-5">
-                    {packages.map((pkg) => (
-                        <li
-                            key={pkg.name}
-                            className="skill-line flex items-center justify-between font-mono text-xs md:text-sm text-white/60 max-w-md"
-                        >
-                            <span>
-                                <span className="text-emerald-400 mr-2">✓</span>
-                                {pkg.name}
-                            </span>
-                            <span className="text-white/30">{pkg.version}</span>
-                        </li>
-                    ))}
-                </ul>
-
-                <p className="install-summary font-mono text-xs md:text-sm text-white/40 mb-8">
+                <p className="hidden sm:block">
                     added <span className="text-white/70">{packages.length} packages</span> in 1.2s
                 </p>
+            </div>
 
-                <p className="font-mono text-xs md:text-sm text-white/40 mb-3">
+            <div className="flex flex-col gap-3 md:gap-5">
+                <VelocityRow
+                    items={packages}
+                    baseVelocity={-3}
+                    velocityFactor={velocityFactor}
+                    skewX={skewX}
+                    outlined
+                />
+                <VelocityRow
+                    items={[...packages].reverse()}
+                    baseVelocity={3}
+                    velocityFactor={velocityFactor}
+                    skewX={skewX}
+                />
+            </div>
+
+            <div className="mt-10 md:mt-16">
+                <p className="px-4 sm:px-6 md:px-10 mb-3 font-mono text-xs md:text-sm text-white/40">
                     <span className="text-amber-400">$</span> npm run build
                 </p>
 
-                <div className="h-2 max-w-md w-full rounded-full bg-white/5 overflow-hidden">
-                    <div
-                        ref={progressBarRef}
-                        className="h-full w-full origin-left rounded-full bg-gradient-to-r from-amber-400 via-sky-400 to-emerald-400"
-                        style={{ transform: "scaleX(0)" }}
+                {/* edge to edge, fills as you scroll through the section */}
+                <div className="h-[3px] w-full bg-white/10">
+                    <motion.div
+                        style={{ scaleX: progress }}
+                        className="h-full w-full origin-left bg-gradient-to-r from-amber-400 via-sky-400 to-emerald-400"
                     />
                 </div>
 
-                <p
-                    ref={buildStatusRef}
-                    className="mt-4 font-mono text-xs md:text-sm text-emerald-400"
+                <motion.p
+                    style={{ opacity: statusOpacity, y: statusY }}
+                    className="px-4 sm:px-6 md:px-10 mt-4 font-mono text-xs md:text-sm text-emerald-400"
                 >
                     ✓ build succeeded — 0 errors, 1 developer ready to ship
-                </p>
+                </motion.p>
             </div>
         </section>
     );

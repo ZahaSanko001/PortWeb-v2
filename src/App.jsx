@@ -33,7 +33,7 @@ const App = () => {
     /> */}
       <Navbar2/>
       <Hero2/>
-      <Carousel3/>
+      <Carousel3_1/>
       <Projects2/>
       <Experience2/>
       <About2/>
