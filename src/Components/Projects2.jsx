@@ -27,6 +27,16 @@ const projectData = [
     },
     {
         id: 3,
+        file: "Denki.rs",
+        image: "denki-player.png",
+        isLogo: false,
+        link: "https://github.com/ZahaSanko001/Denki",
+        title: "でんき Denki",
+        text: "Denki is a compact desktop music player for listening to local audio files. It pairs a minimal interface with a CAVA-inspired stereo spectrum visualizer",
+        techs: ["Rust", "Tauri", "JavaScript"],
+    },
+    {
+        id: 4,
         file: "MetricForge.cs",
         image: "MetricForge.png",
         isLogo: false,
@@ -36,7 +46,7 @@ const projectData = [
         techs: ["C#", "WPF", ".NET"],
     },
     {
-        id: 4,
+        id: 5,
         file: "attendance-service.java",
         image: "github-icon.webp",
         isLogo: true,
@@ -46,7 +56,7 @@ const projectData = [
         techs: ["Spring Boot", "Java", "Python", "OpenCV", "FastAPI", "MySQL"],
     },
     {
-        id: 5,
+        id: 6,
         file: "task-forge.cs",
         image: "github-icon.webp",
         isLogo: true,
