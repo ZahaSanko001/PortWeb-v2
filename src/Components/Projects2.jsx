@@ -28,7 +28,7 @@ const projectData = [
     {
         id: 3,
         file: "Denki.rs",
-        image: "denki-player.png",
+        image: "denki-library.png",
         isLogo: false,
         link: "https://github.com/ZahaSanko001/Denki",
         title: "でんき Denki",
