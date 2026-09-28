@@ -13,7 +13,7 @@ const projectData = [
         link: "https://versitium.com",
         title: "Versitium",
         text: "A SaaS learning management application with complete SEO, marketing, analytics and payment gateway integration — student video/downloadable lessons and quizzes, tutor-side management and article publishing, and full admin/moderator controls.",
-        techs: [".NET", "ASP.NET Core", "Razor Pages", "Sql server", "Redis"],
+        techs: [".NET", "ASP.NET Core", "Razor Pages", "SQL Server", "Redis"],
     },
     {
         id: 2,
