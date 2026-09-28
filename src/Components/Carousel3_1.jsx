@@ -17,6 +17,7 @@ import {
     SiSpringboot,
     SiFastapi,
     SiMysql,
+    SiPostgresql,
     SiDocker,
     SiRust,
     SiTauri
@@ -29,10 +30,12 @@ const packages = [
     { name: "asp.net-core", version: "10.0.10", Icon: SiDotnet, color: "#8B6FF0" },
     { name: "spring-boot", version: "4.1.0", Icon: SiSpringboot, color: "#6DB33F" },
     { name: "fastApi", version: "0.141.1", Icon: SiFastapi, color: "#14B8A6" },
-    { name: "mysql", version: "17.0.4065.4", Icon: SiMysql, color: "#E04B49" },
-    { name: "docker", version: "29.7.1", Icon: SiDocker, color: "#2496ED" },
     { name: "rust", version: "1.98.1", Icon: SiRust, color: "#796a6a" },
     { name: "tauri", version: "2.12.0", Icon: SiTauri, color: "#24C8D8" },
+    { name: "postgres", version: "9.7", Icon: SiPostgresql, color: "#336791" },
+    { name: "mysql", version: "9.7", Icon: SiMysql, color: "#f29111" },
+    // { name: "SQLserver", version: "17.0.5005.3", Icon: SiMicrosoftsqlserver, color: "#C92027" },
+    { name: "docker", version: "29.7.1", Icon: SiDocker, color: "#2496ED" },
 ];
 
 // Wraps v into [min, max) so the loop is seamless.
@@ -125,7 +128,7 @@ const Carousel = () => {
                     <span className="text-amber-400">$</span> npm install @ryan/skillset
                 </p>
                 <p className="hidden sm:block">
-                    added <span className="text-white/70">{packages.length} packages</span> in 1.2s
+                    added <span className="text-white/70">{packages.length} packages</span> in 3.1y
                 </p>
             </div>
 
