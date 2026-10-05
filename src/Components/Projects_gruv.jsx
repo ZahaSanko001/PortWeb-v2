@@ -4,16 +4,6 @@ import { motion } from "motion/react";
 const projectData = [
     {
         id: 1,
-        file: "versitium.cshtml",
-        image: "Versitium.png",
-        isLogo: false,
-        link: "https://versitium.com",
-        title: "Versitium",
-        text: "A SaaS learning management application with complete SEO, marketing, analytics and payment gateway integration — student video/downloadable lessons and quizzes, tutor-side management and article publishing, and full admin/moderator controls.",
-        techs: [".NET", "ASP.NET Core", "Razor Pages", "SQL Server", "Redis"],
-    },
-    {
-        id: 2,
         file: "Tabulae.tsx",
         image: "Tabulae.png",
         isLogo: false,
@@ -23,7 +13,7 @@ const projectData = [
         techs: ["ExpressJs", "TypeScript", "ReactFlow", "Dagre"],
     },
     {
-        id: 3,
+        id: 2,
         file: "Denki.rs",
         image: "denki-library.png",
         isLogo: false,
@@ -31,6 +21,16 @@ const projectData = [
         title: "でんき Denki",
         text: "Denki is a compact desktop music player for listening to local audio files. It pairs a minimal interface with a CAVA-inspired stereo spectrum visualizer",
         techs: ["Rust", "Tauri", "JavaScript"],
+    },
+    {
+        id: 3,
+        file: "versitium.cshtml",
+        image: "Versitium.png",
+        isLogo: false,
+        link: "https://versitium.com",
+        title: "Versitium",
+        text: "A SaaS learning management application with complete SEO, marketing, analytics and payment gateway integration — student video/downloadable lessons and quizzes, tutor-side management and article publishing, and full admin/moderator controls.",
+        techs: [".NET", "ASP.NET Core", "Razor Pages", "SQL Server", "Redis"],
     },
     {
         id: 4,
