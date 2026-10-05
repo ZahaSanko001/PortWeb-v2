@@ -54,13 +54,13 @@ const PackageItem = ({ pkg, outlined }) => (
         <span
             className={
                 outlined
-                    ? "text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.45)]"
-                    : "text-white/80"
+                    ? "text-transparent [-webkit-text-stroke:1px_var(--gruvbox-fg4)]"
+                    : "text-gruvbox-fg1/80"
             }
         >
             {pkg.name}
         </span>
-        <span className="text-amber-400/70 text-[0.32em] [-webkit-text-stroke:0]">
+        <span className="text-gruvbox-yellow/70 text-[0.32em] [-webkit-text-stroke:0]">
             {pkg.version}
         </span>
     </span>
@@ -123,12 +123,12 @@ const Carousel = () => {
             {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-[#1A1A1A] to-transparent z-10" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-[#1A1A1A] to-transparent z-10" /> */}
 
-            <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 mb-6 md:mb-10 font-mono text-xs md:text-sm text-white/40">
+            <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 mb-6 md:mb-10 font-mono text-xs md:text-sm text-gruvbox-gray">
                 <p>
-                    <span className="text-amber-400">$</span> npm install @ryan/skillset
+                    <span className="text-gruvbox-orange">$</span> npm install @ryan/skillset
                 </p>
                 <p className="hidden sm:block">
-                    added <span className="text-white/70">{packages.length} packages</span> in 3.1y
+                    added <span className="text-gruvbox-fg4">{packages.length} packages</span> in 3.1y
                 </p>
             </div>
 
@@ -149,21 +149,21 @@ const Carousel = () => {
             </div>
 
             <div className="mt-10 md:mt-16">
-                <p className="px-4 sm:px-6 md:px-10 mb-3 font-mono text-xs md:text-sm text-white/40">
-                    <span className="text-amber-400">$</span> npm run build
+                <p className="px-4 sm:px-6 md:px-10 mb-3 font-mono text-xs md:text-sm text-gruvbox-gray">
+                    <span className="text-gruvbox-orange">$</span> npm run build
                 </p>
 
                 {/* edge to edge, fills as you scroll through the section */}
-                <div className="h-[3px] w-full bg-white/10">
+                <div className="h-[3px] w-full bg-gruvbox-bg3/60">
                     <motion.div
                         style={{ scaleX: progress }}
-                        className="h-full w-full origin-left bg-gradient-to-r from-amber-400 via-sky-400 to-emerald-400"
+                        className="h-full w-full origin-left bg-gradient-to-r from-gruvbox-orange via-gruvbox-yellow to-gruvbox-green"
                     />
                 </div>
 
                 <motion.p
                     style={{ opacity: statusOpacity, y: statusY }}
-                    className="px-4 sm:px-6 md:px-10 mt-4 font-mono text-xs md:text-sm text-emerald-400"
+                    className="px-4 sm:px-6 md:px-10 mt-4 font-mono text-xs md:text-sm text-gruvbox-green"
                 >
                     ✓ build succeeded — 0 errors, 1 developer ready to ship
                 </motion.p>

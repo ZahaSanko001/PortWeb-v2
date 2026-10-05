@@ -1,6 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
+:root {
+    /* Gruvbox dark palette from the hero section */
+    --gruvbox-bg0: #1d2021;
+    --gruvbox-bg0-overlay: rgb(29 32 33 / 72%);
+    --gruvbox-bg1: #282828;
+    --gruvbox-bg2: #3c3836;
+    --gruvbox-bg3: #504945;
+    --gruvbox-fg1: #ebdbb2;
+    --gruvbox-fg4: #a89984;
+    --gruvbox-gray: #928374;
+    --gruvbox-red: #fb4934;
+    --gruvbox-green: #b8bb26;
+    --gruvbox-yellow: #fabd2f;
+    --gruvbox-blue: #83a598;
+    --gruvbox-purple: #d3869b;
+    --gruvbox-aqua: #8ec07c;
+    --gruvbox-orange: #fe8019;
+}
+
+@theme {
+    --color-gruvbox-bg0: var(--gruvbox-bg0);
+    --color-gruvbox-bg1: var(--gruvbox-bg1);
+    --color-gruvbox-bg2: var(--gruvbox-bg2);
+    --color-gruvbox-bg3: var(--gruvbox-bg3);
+    --color-gruvbox-fg1: var(--gruvbox-fg1);
+    --color-gruvbox-fg4: var(--gruvbox-fg4);
+    --color-gruvbox-gray: var(--gruvbox-gray);
+    --color-gruvbox-red: var(--gruvbox-red);
+    --color-gruvbox-green: var(--gruvbox-green);
+    --color-gruvbox-yellow: var(--gruvbox-yellow);
+    --color-gruvbox-blue: var(--gruvbox-blue);
+    --color-gruvbox-purple: var(--gruvbox-purple);
+    --color-gruvbox-aqua: var(--gruvbox-aqua);
+    --color-gruvbox-orange: var(--gruvbox-orange);
+}
+
 @theme {
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
     --font-sans: "Inter", ui-sans-serif, system-ui;
@@ -16,8 +52,8 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #1A1A1A;
-    color: #FFFFFF;
+    background-color: var(--gruvbox-bg0);
+    color: var(--gruvbox-fg1);
     font-family: var(--font-sans);
 
     position: relative;

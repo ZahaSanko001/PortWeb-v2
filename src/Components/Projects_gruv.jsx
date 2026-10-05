@@ -1,8 +1,5 @@
-import React, { useRef } from "react";
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(ScrollTrigger);
+import React from "react";
+import { motion } from "motion/react";
 
 const projectData = [
     {
@@ -69,66 +66,29 @@ const projectData = [
 
 const dotColors = ["bg-gruvbox-red/70", "bg-gruvbox-yellow/70", "bg-gruvbox-green/70"];
 
+const headerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 36 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 const Projects = () => {
-    const sectionRef = useRef();
-    const headerRef = useRef();
-
-    useGSAP(() => {
-        gsap.from(headerRef.current, {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: headerRef.current,
-                start: "top 85%",
-            }
-        });
-
-        // Single, simple reveal — identical behavior at every breakpoint,
-        // nothing pinned, nothing that depends on card height matching.
-        gsap.utils.toArray(".project-card").forEach((card) => {
-            gsap.from(card, {
-                opacity: 0,
-                y: 36,
-                duration: 0.6,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 90%",
-                    toggleActions: "play none none reverse",
-                    invalidateOnRefresh: true,
-                }
-            });
-        });
-
-        const imgs = sectionRef.current.querySelectorAll("img");
-        Promise.all(
-            Array.from(imgs).map((img) =>
-                img.complete
-                    ? Promise.resolve()
-                    : new Promise((resolve) => img.addEventListener("load", resolve, { once: true }))
-            )
-        ).then(() => ScrollTrigger.refresh());
-    }, { scope: sectionRef });
-
     return (
         <section
             id="projects"
-            ref={sectionRef}
             className="relative py-20 md:py-32 px-4 sm:px-6 md:px-8 overflow-hidden"
         >
-            {/* faint grid backdrop */}
-{/*             <div
-                className="pointer-events-none absolute inset-0 opacity-[0.05]"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-                    backgroundSize: "42px 42px",
-                }}
-            /> */}
-
-            <div ref={headerRef} className="relative max-w-5xl mx-auto text-center mb-12 md:mb-20">
+            <motion.div
+                className="relative max-w-5xl mx-auto text-center mb-12 md:mb-20"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.4 }}
+                variants={headerVariants}
+            >
                 <span className="font-mono text-xs md:text-sm tracking-[0.2em] text-gruvbox-orange/80 uppercase">
                     // selected work
                 </span>
@@ -136,16 +96,21 @@ const Projects = () => {
                     Projects
                     <span className="inline-block w-[0.4ch] h-[0.85em] ml-2 align-middle bg-gruvbox-orange animate-pulse" />
                 </h2>
-            </div>
+            </motion.div>
 
             <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
                 {projectData.map((p) => (
-                    <a
+                    <motion.a
                         key={p.id}
                         href={p.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="project-card group relative flex flex-col rounded-xl border border-gruvbox-bg3/60 bg-gruvbox-bg1 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-gruvbox-orange/40 hover:shadow-lg hover:shadow-gruvbox-orange/15"
+                        className="group relative flex flex-col rounded-xl border border-gruvbox-bg3/60 bg-gruvbox-bg1 overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-gruvbox-orange/40 hover:shadow-lg hover:shadow-gruvbox-orange/15"
+                        initial="hidden"
+                        whileInView="visible"
+                        whileHover={{ y: -4 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        variants={cardVariants}
                     >
                         {/* editor tab bar */}
                         <div className="flex items-center gap-2 px-4 py-3 border-b border-gruvbox-bg3/50 bg-gruvbox-bg2/40">
@@ -193,7 +158,7 @@ const Projects = () => {
                                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                             </span>
                         </div>
-                    </a>
+                    </motion.a>
                 ))}
             </div>
         </section>

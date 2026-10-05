@@ -13,7 +13,7 @@ const navLinks = [
     { href: "#contact", label: "~/contact" },
 ];
 
-const dotColors = ["bg-amber-400/70", "bg-sky-400/70", "bg-emerald-400/70"];
+const dotColors = ["bg-gruvbox-red/70", "bg-gruvbox-yellow/70", "bg-gruvbox-green/70"];
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,9 +24,9 @@ const Navbar = () => {
         // as the page scrolls, so using it as the trigger was unreliable.
         gsap.fromTo(
             ".nav-surface",
-            { backgroundColor: "#00000050", backdropFilter: "blur(0px)" },
+            { backgroundColor: "var(--gruvbox-bg0-overlay)", backdropFilter: "blur(0px)" },
             {
-                backgroundColor: "#00000050",
+                backgroundColor: "var(--gruvbox-bg0-overlay)",
                 backdropFilter: "blur(10px)",
                 duration: 0.4,
                 ease: "power1.out",
@@ -43,7 +43,7 @@ const Navbar = () => {
         <nav>
             {/* desktop */}
             <div className="hidden md:flex fixed top-0 left-4 justify-center py-4 z-40">
-                <div className="nav-surface flex items-center gap-1 rounded-full border border-white/10 px-2 py-2">
+                <div className="nav-surface flex items-center gap-1 rounded-full border border-gruvbox-bg3/70 px-2 py-2">
                     <div className="flex items-center gap-1.5 px-3">
                         {dotColors.map((c, i) => (
                             <span key={i} className={`w-1.5 h-1.5 rounded-full ${c}`} />
@@ -55,7 +55,7 @@ const Navbar = () => {
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className="font-mono text-xs lg:text-sm text-white/60 hover:text-amber-400 transition-colors px-3 py-1.5 rounded-full hover:bg-white/5"
+                                className="font-mono text-xs lg:text-sm text-gruvbox-fg4 hover:text-gruvbox-orange transition-colors px-3 py-1.5 rounded-full hover:bg-gruvbox-bg2/60"
                             >
                                 {link.label}
                             </a>
@@ -64,7 +64,7 @@ const Navbar = () => {
 
                     <a
                         href="#contact"
-                        className="ml-1 font-mono text-xs lg:text-sm text-amber-300 border border-amber-400/30 bg-amber-400/[0.08] hover:bg-amber-400/15 hover:border-amber-400/50 transition-colors px-4 py-1.5 rounded-full"
+                        className="ml-1 font-mono text-xs lg:text-sm text-gruvbox-yellow border border-gruvbox-orange/30 bg-gruvbox-orange/10 hover:bg-gruvbox-orange/20 hover:border-gruvbox-orange/50 transition-colors px-4 py-1.5 rounded-full"
                     >
                         ~/contact
                     </a>
@@ -76,7 +76,7 @@ const Navbar = () => {
                 <button
                     onClick={() => setIsOpen(true)}
                     aria-label="Open menu"
-                    className={`nav-surface rounded-lg border border-white/10 p-2.5 text-amber-400 transition-opacity ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+                    className={`nav-surface rounded-lg border border-gruvbox-bg3/70 p-2.5 text-gruvbox-orange transition-opacity ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -89,18 +89,18 @@ const Navbar = () => {
 
             {/* mobile panel, styled like a terminal window */}
             {isOpen && (
-                <div className="md:hidden fixed top-4 left-4 right-4 z-50 rounded-2xl border border-white/10 backdrop-blur-[10px] shadow-2xl overflow-hidden">
-                    <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10">
+                <div className="md:hidden fixed top-4 left-4 right-4 z-50 rounded-2xl border border-gruvbox-bg3/70 bg-gruvbox-bg0/95 backdrop-blur-[10px] shadow-2xl overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-3 border-b border-gruvbox-bg3/70">
                         {dotColors.map((c, i) => (
                             <span key={i} className={`w-2.5 h-2.5 rounded-full ${c}`} />
                         ))}
-                        <span className="ml-3 font-mono text-xs text-white/40 truncate">
+                        <span className="ml-3 font-mono text-xs text-gruvbox-gray truncate">
                             menu.sh
                         </span>
                         <button
                             onClick={() => setIsOpen(false)}
                             aria-label="Close menu"
-                            className="ml-auto text-white/40 hover:text-amber-400 transition-colors"
+                            className="ml-auto text-gruvbox-gray hover:text-gruvbox-orange transition-colors"
                         >
                             ✕
                         </button>
@@ -112,9 +112,9 @@ const Navbar = () => {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="font-mono text-base text-white/80 hover:text-amber-400 transition-colors py-2"
+                                className="font-mono text-base text-gruvbox-fg1 hover:text-gruvbox-orange transition-colors py-2"
                             >
-                                <span className="text-amber-400/70">cd</span> {link.label}
+                                <span className="text-gruvbox-orange/80">cd</span> {link.label}
                             </a>
                         ))}
                     </div>

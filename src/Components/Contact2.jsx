@@ -1,8 +1,5 @@
-import React, { useRef, useState } from "react";
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(ScrollTrigger);
+import React, { useState } from "react";
+import { motion } from "motion/react";
 
 const socials = [
     {
@@ -39,24 +36,25 @@ const socials = [
 
 const EMAIL = "Zgyro905@gmail.com";
 
-const Contact = () => {
-    const sectionRef = useRef();
-    const [copied, setCopied] = useState(false);
+// power2.out as a cubic-bezier, same curve used across the other
+// Motion-converted sections for consistency.
+const easeOut = [0.25, 0.46, 0.45, 0.94];
 
-    useGSAP(() => {
-        gsap.from(".contact-reveal", {
-            opacity: 0,
-            y: 24,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top 85%",
-                toggleActions: "restart none restart none",
-            }
-        });
-    }, { scope: sectionRef });
+// All five revealed elements are direct children of the same wrapper,
+// so a single-level staggerChildren group is a clean fit — no nested
+// depth trade-offs here, unlike About/Experience/Hero.
+const groupVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15 } },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: easeOut } },
+};
+
+const Contact = () => {
+    const [copied, setCopied] = useState(false);
 
     const handleCopyEmail = async () => {
         try {
@@ -71,41 +69,39 @@ const Contact = () => {
     return (
         <footer
             id="contact"
-            ref={sectionRef}
-            className="relative border-t border-amber-400/64 bg-gradient-to-b from-amber-400/10 to-black pt-20 md:pt-28 pb-10 px-4 sm:px-6 md:px-8 overflow-hidden"
+            className="relative border-t border-gruvbox-orange/60 bg-gradient-to-b from-gruvbox-orange/10 to-gruvbox-bg0 pt-20 md:pt-28 pb-10 px-4 sm:px-6 md:px-8 overflow-hidden"
         >
-{/*             <div
-                className="pointer-events-none absolute inset-0 opacity-[0.05]"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-                    backgroundSize: "42px 42px",
-                }}
-            /> */}
-
-            <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-8">
-                <div className="contact-reveal">
-                    <p className="font-mono text-xs md:text-sm text-white/40">
-                        <span className="text-amber-400">$</span> contact --init
+            <motion.div
+                className="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-8"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+                variants={groupVariants}
+            >
+                <motion.div variants={itemVariants}>
+                    <p className="font-mono text-xs md:text-sm text-gruvbox-gray">
+                        <span className="text-gruvbox-orange">$</span> contact --init
                     </p>
-                    <h2 className="mt-3 font-mono text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white">
+                    <h2 className="mt-3 font-mono text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-gruvbox-fg1">
                         Let's build{" "}
                         <span className="whitespace-nowrap">
                             something
-                            <span className="inline-block w-[0.35ch] h-[0.8em] ml-2 align-middle bg-amber-400 animate-pulse" />
+                            <span className="inline-block w-[0.35ch] h-[0.8em] ml-2 align-middle bg-gruvbox-orange animate-pulse" />
                         </span>
                     </h2>
-                </div>
+                </motion.div>
 
-                <img
-                    src="pfp.webp"
+                <motion.img
+                    variants={itemVariants}
+                    src="pfp.jpg"
                     alt="Ryan"
-                    className="contact-reveal h-24 w-24 md:h-32 md:w-32 rounded-full object-cover border-4 border-amber-400/60 shadow-[0_0_40px_-12px_rgba(245,166,35,0.45)]"
+                    className="h-24 w-24 md:h-32 md:w-32 rounded-full object-cover border-4 border-gruvbox-orange/60 shadow-lg shadow-gruvbox-orange/20"
                 />
 
-                <button
+                <motion.button
+                    variants={itemVariants}
                     onClick={handleCopyEmail}
-                    className="contact-reveal group inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/[0.06] px-5 py-2.5 font-mono text-xs md:text-sm text-amber-300 hover:bg-amber-400/10 hover:border-amber-400/50 transition-colors"
+                    className="group inline-flex items-center gap-2 rounded-full border border-gruvbox-orange/30 bg-gruvbox-orange/10 px-5 py-2.5 font-mono text-xs md:text-sm text-gruvbox-yellow hover:bg-gruvbox-orange/15 hover:border-gruvbox-orange/50 transition-colors"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -113,12 +109,12 @@ const Contact = () => {
                         <path d="M3 7l9 6l9 -6" />
                     </svg>
                     {EMAIL}
-                    <span className="text-white/30 group-hover:text-amber-300 transition-colors">
+                    <span className="text-gruvbox-gray/70 group-hover:text-gruvbox-yellow transition-colors">
                         {copied ? "· copied" : "· click to copy"}
                     </span>
-                </button>
+                </motion.button>
 
-                <div className="contact-reveal flex gap-3">
+                <motion.div variants={itemVariants} className="flex gap-3">
                     {socials.map((s) => (
                         <a
                             key={s.label}
@@ -126,7 +122,7 @@ const Contact = () => {
                             target="_blank"
                             rel="noreferrer"
                             aria-label={s.label}
-                            className="rounded-lg border border-white/10 p-2.5 text-white/60 hover:text-amber-400 hover:border-amber-400/40 transition-colors"
+                            className="rounded-lg border border-gruvbox-bg3/70 p-2.5 text-gruvbox-fg4 hover:text-gruvbox-orange hover:border-gruvbox-orange/40 transition-colors"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -134,12 +130,12 @@ const Contact = () => {
                             </svg>
                         </a>
                     ))}
-                </div>
+                </motion.div>
 
-                <p className="contact-reveal font-mono text-xs text-white/30 mt-6">
-                    <span className="text-white/20">export default</span> Ryan<span className="text-white/20">;</span>
-                </p>
-            </div>
+                <motion.p variants={itemVariants} className="font-mono text-xs text-gruvbox-gray/70 mt-6">
+                    <span className="text-gruvbox-gray/50">export default</span> Ryan<span className="text-gruvbox-gray/50">;</span>
+                </motion.p>
+            </motion.div>
         </footer>
     );
 }
