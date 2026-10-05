@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 
 const projectData = [
@@ -6,7 +6,7 @@ const projectData = [
         id: 1,
         file: "Tabulae.tsx",
         image: "Tabulae.png",
-        gif: "Tabulae.gif",
+        clip: "Tabulae.mp4",
         isLogo: false,
         link: "https://github.com/ZahaSanko001/Tabulae",
         title: "Tabulae",
@@ -17,7 +17,7 @@ const projectData = [
         id: 2,
         file: "Denki.rs",
         image: "denki-library.png",
-        gif: "Denki.gif",
+        clip: "Denki.mp4",
         isLogo: false,
         link: "https://github.com/ZahaSanko001/Denki",
         title: "でんき Denki",
@@ -83,9 +83,27 @@ const prefersReducedMotion =
 
 const ProjectCard = ({ p }) => {
     const [hovered, setHovered] = useState(false);
-    const [gifLoaded, setGifLoaded] = useState(false);
+    const [clipLoaded, setClipLoaded] = useState(false);
+    const videoRef = useRef(null);
 
-    const canShowGif = !!p.gif && !prefersReducedMotion;
+    const canShowClip = !!p.clip && !prefersReducedMotion;
+
+    // Mounting the <video> (on first hover) and actually playing it are
+    // separate concerns — this keeps it paused and reset to frame 0
+    // whenever you're not hovering, rather than just hidden-but-running.
+    useEffect(() => {
+        if (!clipLoaded || !videoRef.current) return;
+        if (hovered) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play().catch(() => {
+                // Autoplay can be blocked in some contexts even when
+                // muted; failing silently just means the poster image
+                // stays visible instead, which is a fine fallback.
+            });
+        } else {
+            videoRef.current.pause();
+        }
+    }, [hovered, clipLoaded]);
 
     return (
         <motion.a
@@ -100,7 +118,7 @@ const ProjectCard = ({ p }) => {
             variants={cardVariants}
             onHoverStart={() => {
                 setHovered(true);
-                if (canShowGif) setGifLoaded(true);
+                if (canShowClip) setClipLoaded(true);
             }}
             onHoverEnd={() => setHovered(false)}
         >
@@ -123,16 +141,20 @@ const ProjectCard = ({ p }) => {
                         p.isLogo
                             ? "h-16 w-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
                             : `h-full w-full object-cover grayscale-[35%] transition-all duration-500 ${
-                                  canShowGif && hovered ? "opacity-0" : "opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                                  canShowClip && hovered ? "opacity-0" : "opacity-100 group-hover:grayscale-0 group-hover:scale-105"
                               }`
                     }
                 />
 
-                {/* gif only mounts after first hover — never fetched until needed */}
-                {gifLoaded && (
-                    <img
-                        src={p.gif}
-                        alt=""
+                {/* video only mounts after first hover — never fetched until needed */}
+                {clipLoaded && (
+                    <video
+                        ref={videoRef}
+                        src={p.clip}
+                        muted
+                        loop
+                        playsInline
+                        preload="none"
                         aria-hidden="true"
                         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
                             hovered ? "opacity-100" : "opacity-0"
