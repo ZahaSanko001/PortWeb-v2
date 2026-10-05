@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 
 const projectData = [
@@ -6,6 +6,7 @@ const projectData = [
         id: 1,
         file: "Tabulae.tsx",
         image: "Tabulae.png",
+        gif: "Tabulae.gif",
         isLogo: false,
         link: "https://github.com/ZahaSanko001/Tabulae",
         title: "Tabulae",
@@ -16,6 +17,7 @@ const projectData = [
         id: 2,
         file: "Denki.rs",
         image: "denki-library.png",
+        gif: "Denki.gif",
         isLogo: false,
         link: "https://github.com/ZahaSanko001/Denki",
         title: "でんき Denki",
@@ -76,6 +78,96 @@ const cardVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+const prefersReducedMotion =
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const ProjectCard = ({ p }) => {
+    const [hovered, setHovered] = useState(false);
+    const [gifLoaded, setGifLoaded] = useState(false);
+
+    const canShowGif = !!p.gif && !prefersReducedMotion;
+
+    return (
+        <motion.a
+            href={p.link}
+            target="_blank"
+            rel="noreferrer"
+            className="group relative flex flex-col rounded-xl border border-gruvbox-bg3/60 bg-gruvbox-bg1 overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-gruvbox-orange/40 hover:shadow-lg hover:shadow-gruvbox-orange/15"
+            initial="hidden"
+            whileInView="visible"
+            whileHover={{ y: -4 }}
+            viewport={{ once: false, amount: 0.2 }}
+            variants={cardVariants}
+            onHoverStart={() => {
+                setHovered(true);
+                if (canShowGif) setGifLoaded(true);
+            }}
+            onHoverEnd={() => setHovered(false)}
+        >
+            {/* editor tab bar */}
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-gruvbox-bg3/50 bg-gruvbox-bg2/40">
+                {dotColors.map((c, i) => (
+                    <span key={i} className={`w-2.5 h-2.5 rounded-full ${c}`} />
+                ))}
+                <span className="ml-3 font-mono text-xs text-gruvbox-gray truncate">
+                    {p.file}
+                </span>
+            </div>
+
+            {/* preview */}
+            <div className={`relative aspect-video overflow-hidden bg-gruvbox-bg0 ${p.isLogo ? "flex items-center justify-center p-10 bg-gruvbox-bg2/40" : ""}`}>
+                <img
+                    src={p.image}
+                    alt={p.title}
+                    className={
+                        p.isLogo
+                            ? "h-16 w-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                            : `h-full w-full object-cover grayscale-[35%] transition-all duration-500 ${
+                                  canShowGif && hovered ? "opacity-0" : "opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                              }`
+                    }
+                />
+
+                {/* gif only mounts after first hover — never fetched until needed */}
+                {gifLoaded && (
+                    <img
+                        src={p.gif}
+                        alt=""
+                        aria-hidden="true"
+                        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
+                            hovered ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
+                )}
+            </div>
+
+            {/* body */}
+            <div className="flex flex-col flex-1 p-5 md:p-6">
+                <h3 className="font-mono text-lg md:text-xl text-gruvbox-fg1 mb-2 leading-snug">
+                    {p.title}
+                </h3>
+                <p className="text-sm text-gruvbox-fg4 leading-relaxed mb-4 flex-1">
+                    {p.text}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                    {p.techs.map((tech) => (
+                        <span
+                            key={tech}
+                            className="font-mono text-[11px] px-2 py-1 rounded border border-gruvbox-orange/25 bg-gruvbox-orange/10 text-gruvbox-yellow/80"
+                        >
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+                <span className="font-mono text-xs text-gruvbox-gray group-hover:text-gruvbox-orange transition-colors inline-flex items-center gap-1.5">
+                    view_project()
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+            </div>
+        </motion.a>
+    );
+};
+
 const Projects = () => {
     return (
         <section
@@ -100,65 +192,7 @@ const Projects = () => {
 
             <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
                 {projectData.map((p) => (
-                    <motion.a
-                        key={p.id}
-                        href={p.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="group relative flex flex-col rounded-xl border border-gruvbox-bg3/60 bg-gruvbox-bg1 overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-gruvbox-orange/40 hover:shadow-lg hover:shadow-gruvbox-orange/15"
-                        initial="hidden"
-                        whileInView="visible"
-                        whileHover={{ y: -4 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        variants={cardVariants}
-                    >
-                        {/* editor tab bar */}
-                        <div className="flex items-center gap-2 px-4 py-3 border-b border-gruvbox-bg3/50 bg-gruvbox-bg2/40">
-                            {dotColors.map((c, i) => (
-                                <span key={i} className={`w-2.5 h-2.5 rounded-full ${c}`} />
-                            ))}
-                            <span className="ml-3 font-mono text-xs text-gruvbox-gray truncate">
-                                {p.file}
-                            </span>
-                        </div>
-
-                        {/* preview */}
-                        <div className={`relative aspect-video overflow-hidden bg-gruvbox-bg0 ${p.isLogo ? "flex items-center justify-center p-10 bg-gruvbox-bg2/40" : ""}`}>
-                            <img
-                                src={p.image}
-                                alt={p.title}
-                                className={
-                                    p.isLogo
-                                        ? "h-16 w-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                                        : "h-full w-full object-cover grayscale-[35%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                                }
-                            />
-                        </div>
-
-                        {/* body */}
-                        <div className="flex flex-col flex-1 p-5 md:p-6">
-                            <h3 className="font-mono text-lg md:text-xl text-gruvbox-fg1 mb-2 leading-snug">
-                                {p.title}
-                            </h3>
-                            <p className="text-sm text-gruvbox-fg4 leading-relaxed mb-4 flex-1">
-                                {p.text}
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {p.techs.map((tech) => (
-                                    <span
-                                        key={tech}
-                                        className="font-mono text-[11px] px-2 py-1 rounded border border-gruvbox-orange/25 bg-gruvbox-orange/10 text-gruvbox-yellow/80"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                            <span className="font-mono text-xs text-gruvbox-gray group-hover:text-gruvbox-orange transition-colors inline-flex items-center gap-1.5">
-                                view_project()
-                                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                            </span>
-                        </div>
-                    </motion.a>
+                    <ProjectCard key={p.id} p={p} />
                 ))}
             </div>
         </section>
