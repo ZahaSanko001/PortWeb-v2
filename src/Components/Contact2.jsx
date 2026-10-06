@@ -34,7 +34,7 @@ const socials = [
     },
 ];
 
-const EMAIL = "Zgyro905@gmail.com";
+const EMAIL = "raiyankarim2003@gmail.com";
 
 // power2.out as a cubic-bezier, same curve used across the other
 // Motion-converted sections for consistency.
