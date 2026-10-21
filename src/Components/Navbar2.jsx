@@ -17,7 +17,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
         <nav>
             {/* desktop */}
             <div className="hidden md:flex fixed top-0 left-4 justify-center py-4 z-40">
-                <div className="nav-surface flex items-center gap-1 rounded-full border border-gruvbox-bg3/70 bg-gruvbox-bg0/90 px-2 py-2 backdrop-blur-[10px]">
+                <div className="nav-surface flex items-center gap-1 rounded-full border border-gruvbox-bg3/70 bg-gruvbox-bg0/80 px-2 py-2 backdrop-blur-[10px]">
                     <div className="flex items-center gap-1.5 px-3">
                         {dotColors.map((c, i) => (
                             <span key={i} className={`w-1.5 h-1.5 rounded-full ${c}`} />
@@ -50,7 +50,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
                 onClick={onToggleTheme}
                 aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
                 aria-pressed={theme === "light"}
-                className="fixed top-4 right-4 z-40 inline-flex items-center gap-2 rounded-full border border-gruvbox-bg3/70 bg-gruvbox-bg1/90 px-3 py-2 font-mono text-xs text-gruvbox-fg1 shadow-lg backdrop-blur transition-colors hover:border-gruvbox-orange/60 hover:text-gruvbox-orange"
+                className="fixed top-4 right-4 z-40 inline-flex items-center gap-2 rounded-full border border-gruvbox-bg3/70 bg-gruvbox-bg0/80 px-3 py-2 font-mono text-xs text-gruvbox-fg1 shadow-lg backdrop-blur transition-colors hover:border-gruvbox-orange/60 hover:text-gruvbox-orange"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
                 <button
                     onClick={() => setIsOpen(true)}
                     aria-label="Open menu"
-                    className={`nav-surface rounded-lg border border-gruvbox-bg3/70 bg-gruvbox-bg0/90 p-2.5 text-gruvbox-orange backdrop-blur-[10px] transition-opacity ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+                    className={`nav-surface rounded-lg border border-gruvbox-bg3/70 bg-gruvbox-bg0/80 p-2.5 text-gruvbox-orange backdrop-blur-[10px] transition-opacity ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -94,7 +94,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
 
             {/* mobile panel, styled like a terminal window */}
             {isOpen && (
-                <div className="md:hidden fixed top-4 left-4 right-4 z-50 rounded-2xl border border-gruvbox-bg3/70 bg-gruvbox-bg0/95 backdrop-blur-[10px] shadow-2xl overflow-hidden">
+                <div className="md:hidden fixed top-4 left-4 right-4 z-50 rounded-2xl border border-gruvbox-bg3/70 bg-gruvbox-bg0/85 backdrop-blur-[10px] shadow-2xl overflow-hidden">
                     <div className="flex items-center gap-2 px-4 py-3 border-b border-gruvbox-bg3/70">
                         {dotColors.map((c, i) => (
                             <span key={i} className={`w-2.5 h-2.5 rounded-full ${c}`} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 // Gruvbox colors are defined globally in src/index.css.
@@ -18,6 +18,8 @@ const gb = {
     aqua: "var(--gruvbox-aqua)",
     orange: "var(--gruvbox-orange)",
 };
+
+const CONTACT_EMAIL = "raiyankarim2003@gmail.com";
 
 const socials = [
     {
@@ -117,6 +119,57 @@ const ShellPrompt = () => (
     </div>
 );
 
+const AvailabilityBadge = () => {
+    const [message, setMessage] = useState("Available For Work");
+    const [isCopied, setIsCopied] = useState(false);
+    const resetTimer = useRef(null);
+
+    useEffect(() => () => window.clearTimeout(resetTimer.current), []);
+
+    const copyEmail = async () => {
+        setIsCopied(false);
+        try {
+            await navigator.clipboard.writeText(CONTACT_EMAIL);
+            setMessage("Email copied — get in touch!");
+            setIsCopied(true);
+        } catch {
+            setMessage("Copy unavailable — use Contact below");
+        }
+
+        window.clearTimeout(resetTimer.current);
+        resetTimer.current = window.setTimeout(() => {
+            setMessage("Available For Work");
+            setIsCopied(false);
+        }, 3000);
+    };
+
+    return (
+        <button
+            type="button"
+            onClick={copyEmail}
+            aria-label="Copy my email address"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-full border px-3 py-2 font-mono text-[10px] sm:text-xs shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-xl active:translate-y-0 active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gruvbox-green"
+            style={{
+                backgroundColor: isCopied ? "color-mix(in srgb, var(--gruvbox-green) 16%, var(--gruvbox-bg1))" : gb.bg1,
+                borderColor: isCopied ? gb.green : gb.bg3,
+                color: isCopied ? gb.green : gb.fg1,
+            }}
+        >
+            <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
+                <span
+                    className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-60 motion-reduce:animate-none"
+                    style={{ backgroundColor: gb.green }}
+                />
+                <span
+                    className="relative inline-flex h-2.5 w-2.5 rounded-full"
+                    style={{ backgroundColor: gb.green }}
+                />
+            </span>
+            <span aria-live="polite">{message}</span>
+        </button>
+    );
+};
+
 // Same math as the old GSAP tween: duration 0.8, stagger 0.12, delay 0.15,
 // ease power2.out (closest cubic-bezier equivalent). Explicit per-item
 // index rather than parent-driven staggerChildren, since the 7 pieces
@@ -149,30 +202,35 @@ const Hero = ({ theme = "dark" }) => {
                         variants={fadeUp}
                         className="flex md:hidden justify-center"
                     >
-                        <div className="relative">
-                            <div
-                                className="absolute inset-0 translate-x-2 translate-y-2 -z-10 rounded-sm"
-                                style={{ backgroundColor: gb.purple }}
-                            />
-                            <div className="w-32 sm:w-40">
+                        <div className="flex flex-col items-center">
+                            <div className="relative">
                                 <div
-                                    className="flex items-center gap-2 px-2.5 py-1 text-[10px] font-mono rounded-t-sm border border-b-0"
-                                    style={{ backgroundColor: gb.bg2, borderColor: gb.bg3, color: gb.fg4 }}
-                                >
-                                    <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: gb.orange }} />
-                                    raiyan.webp
+                                    className="absolute inset-0 translate-x-2 translate-y-2 -z-10 rounded-sm"
+                                    style={{ backgroundColor: gb.purple }}
+                                />
+                                <div className="w-32 sm:w-40">
+                                    <div
+                                        className="flex items-center gap-2 px-2.5 py-1 text-[10px] font-mono rounded-t-sm border border-b-0"
+                                        style={{ backgroundColor: gb.bg2, borderColor: gb.bg3, color: gb.fg4 }}
+                                    >
+                                        <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: gb.orange }} />
+                                        raiyan.webp
+                                    </div>
+                                    <div
+                                        className="w-full aspect-square overflow-hidden border"
+                                        style={{ borderColor: gb.bg3 }}
+                                    >
+                                        <img
+                                            src="pfp.jpg"
+                                            alt="Ryan"
+                                            className="w-full h-full object-cover"
+                                            style={{ filter: "sepia(0.25) saturate(0.8)" }}
+                                        />
+                                    </div>
                                 </div>
-                                <div
-                                    className="w-full aspect-square overflow-hidden border"
-                                    style={{ borderColor: gb.bg3 }}
-                                >
-                                    <img
-                                        src="pfp.jpg"
-                                        alt="Ryan"
-                                        className="w-full h-full object-cover"
-                                        style={{ filter: "sepia(0.25) saturate(0.8)" }}
-                                    />
-                                </div>
+                            </div>
+                            <div className="mt-5 flex justify-center">
+                                <AvailabilityBadge />
                             </div>
                         </div>
                     </motion.div>
@@ -316,39 +374,43 @@ const Hero = ({ theme = "dark" }) => {
                     variants={fadeUp}
                     className="hidden md:flex justify-center"
                 >
-                    <div className="relative">
-                        {/* offset block for depth — sized to match the tab+image
-                            stack automatically, since it fills its relative parent */}
-                        <div
-                            className="absolute inset-0 translate-x-3 translate-y-3 -z-10 rounded-sm"
-                            style={{ backgroundColor: gb.purple }}
-                        />
-
-                        <div className="w-56 lg:w-72">
-                            {/* mini buffer tab, matching the Statusline above */}
+                    <div className="flex flex-col items-center">
+                        <div className="relative">
+                            {/* Offset block adds depth to the photo frame only. */}
                             <div
-                                className="flex items-center gap-2 px-3 py-1.5 text-[11px] font-mono rounded-t-sm border border-b-0"
-                                style={{ backgroundColor: gb.bg2, borderColor: gb.bg3, color: gb.fg4 }}
-                            >
-                                <span
-                                    className="w-1.5 h-1.5 rounded-full"
-                                    style={{ backgroundColor: gb.orange }}
-                                />
-                                raiyan.webp
-                            </div>
+                                className="absolute inset-0 translate-x-3 translate-y-3 -z-10 rounded-sm"
+                                style={{ backgroundColor: gb.purple }}
+                            />
 
-                            <div
-                                className="w-full aspect-square overflow-hidden border rounded-b-sm"
-                                style={{ borderColor: gb.bg3 }}
-                            >
-                                <img
-                                    src="pfp.jpg"
-                                    alt="Ryan"
-                                    className="w-full h-full object-cover"
-                                    style={{ filter: "sepia(0.25) saturate(0.8)" }}
-                                />
+                            <div className="w-56 lg:w-72">
+                                {/* mini buffer tab, matching the Statusline above */}
+                                <div
+                                    className="flex items-center gap-2 px-3 py-1.5 text-[11px] font-mono rounded-t-sm border border-b-0"
+                                    style={{ backgroundColor: gb.bg2, borderColor: gb.bg3, color: gb.fg4 }}
+                                >
+                                    <span
+                                        className="w-1.5 h-1.5 rounded-full"
+                                        style={{ backgroundColor: gb.orange }}
+                                    />
+                                    raiyan.webp
+                                </div>
+
+                                <div
+                                    className="w-full aspect-square overflow-hidden border rounded-b-sm"
+                                    style={{ borderColor: gb.bg3 }}
+                                >
+                                    <img
+                                        src="pfp.jpg"
+                                        alt="Ryan"
+                                        className="w-full h-full object-cover"
+                                        style={{ filter: "sepia(0.25) saturate(0.8)" }}
+                                    />
+                                </div>
                             </div>
                         </div>
+                            <div className="mt-6 flex justify-center">
+                                <AvailabilityBadge />
+                            </div>
                     </div>
                 </motion.div>
             </div>
