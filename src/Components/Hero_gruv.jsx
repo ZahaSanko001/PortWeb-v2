@@ -131,7 +131,7 @@ const fadeUp = {
     }),
 };
 
-const Hero = () => {
+const Hero = ({ theme = "dark" }) => {
     return (
         <section
             id="hero"
@@ -152,7 +152,7 @@ const Hero = () => {
                         <div className="relative">
                             <div
                                 className="absolute inset-0 translate-x-2 translate-y-2 -z-10 rounded-sm"
-                                style={{ backgroundColor: gb.aqua }}
+                                style={{ backgroundColor: gb.purple }}
                             />
                             <div className="w-32 sm:w-40">
                                 <div
@@ -256,7 +256,7 @@ const Hero = () => {
                         initial="hidden"
                         animate="visible"
                         variants={fadeUp}
-                        className="flex items-center gap-4 mt-1"
+                        className="flex flex-wrap items-center gap-2 mt-1"
                     >
                         {socials.map((s) => (
                             <a
@@ -266,12 +266,23 @@ const Hero = () => {
                                 rel="noreferrer"
                                 aria-label={s.label}
                                 title={s.label}
-                                className="transition-colors"
-                                style={{ color: gb.gray }}
-                                onMouseEnter={(e) => (e.currentTarget.style.color = gb.orange)}
-                                onMouseLeave={(e) => (e.currentTarget.style.color = gb.gray)}
+                                className="inline-flex items-center gap-2 rounded-sm border px-3 py-2 font-mono text-xs transition-colors"
+                                style={{
+                                    color: gb.fg4,
+                                    borderColor: gb.bg3,
+                                    backgroundColor: gb.bg1,
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.color = gb.orange;
+                                    e.currentTarget.style.borderColor = gb.orange;
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.color = gb.fg4;
+                                    e.currentTarget.style.borderColor = gb.bg3;
+                                }}
                             >
                                 {s.icon}
+                                <span>{s.label === "X / Twitter" ? "X" : s.label}</span>
                             </a>
                         ))}
                     </motion.div>
@@ -292,7 +303,7 @@ const Hero = () => {
                             />
                         ))}
                         <span className="font-mono text-[10px] ml-2" style={{ color: gb.gray }}>
-                            colorscheme gruvbox
+                            colorscheme {theme === "light" ? "catppuccin" : "gruvbox"}
                         </span>
                     </motion.div>
                 </div>
@@ -310,7 +321,7 @@ const Hero = () => {
                             stack automatically, since it fills its relative parent */}
                         <div
                             className="absolute inset-0 translate-x-3 translate-y-3 -z-10 rounded-sm"
-                            style={{ backgroundColor: gb.aqua }}
+                            style={{ backgroundColor: gb.purple }}
                         />
 
                         <div className="w-56 lg:w-72">

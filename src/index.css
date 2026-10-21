@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -20,6 +20,42 @@
     --gruvbox-orange: #fe8019;
 }
 
+/* Light mode uses the Catppuccin Latte palette while keeping the
+   existing variable names as semantic tokens for the current components. */
+[data-theme="light"] {
+    color-scheme: light;
+    --gruvbox-bg0: #eff1f5;
+    --gruvbox-bg0-overlay: rgb(239 241 245 / 90%);
+    --gruvbox-bg1: #e6e9ef;
+    --gruvbox-bg2: #ccd0da;
+    --gruvbox-bg3: #bcc0cc;
+    --gruvbox-fg1: #4c4f69;
+    --gruvbox-fg4: #5c5f77;
+    --gruvbox-gray: #8c8fa1;
+    --gruvbox-red: #d20f39;
+    --gruvbox-green: #40a02b;
+    --gruvbox-yellow: #df8e1d;
+    --gruvbox-blue: #1e66f5;
+    --gruvbox-purple: #8839ef;
+    --gruvbox-aqua: #179299;
+    --gruvbox-orange: #fe640b;
+    /* Tailwind's generated utilities read these aliases directly. */
+    --color-gruvbox-bg0: #eff1f5;
+    --color-gruvbox-bg1: #e6e9ef;
+    --color-gruvbox-bg2: #ccd0da;
+    --color-gruvbox-bg3: #bcc0cc;
+    --color-gruvbox-fg1: #4c4f69;
+    --color-gruvbox-fg4: #5c5f77;
+    --color-gruvbox-gray: #8c8fa1;
+    --color-gruvbox-red: #d20f39;
+    --color-gruvbox-green: #40a02b;
+    --color-gruvbox-yellow: #df8e1d;
+    --color-gruvbox-blue: #1e66f5;
+    --color-gruvbox-purple: #8839ef;
+    --color-gruvbox-aqua: #179299;
+    --color-gruvbox-orange: #fe640b;
+}
+
 @theme {
     --color-gruvbox-bg0: var(--gruvbox-bg0);
     --color-gruvbox-bg1: var(--gruvbox-bg1);
@@ -38,8 +74,8 @@
 }
 
 @theme {
-    --font-mono: "JetBrains Mono", ui-monospace, monospace;
-    --font-sans: "Inter", ui-sans-serif, system-ui;
+    --font-mono: "JetBrainsMono Nerd Font", "JetBrains Mono", ui-monospace, monospace;
+    --font-sans: "JetBrainsMono Nerd Font", "JetBrains Mono", ui-monospace, monospace;
 }
 
 @theme {
@@ -62,20 +98,23 @@ body {
     cursor: url('/cursor1.png'), auto;
 }
 
-body::before {
-    content: "";
-    position: fixed; /* or absolute */
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.1;
-
+main[data-theme] {
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+    background-color: var(--gruvbox-bg0);
+    color: var(--gruvbox-fg1);
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
-
+        linear-gradient(rgb(255 255 255 / 6%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 6%) 1px, transparent 1px);
     background-size: 42px 42px;
+    transition: background-color 250ms ease, color 250ms ease;
+}
 
-    z-index: -1; /* Behind the page content */
+main[data-theme="light"] {
+    background-image:
+        linear-gradient(rgb(76 79 105 / 17%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(76 79 105 / 17%) 1px, transparent 1px);
 }
 
 /* main {

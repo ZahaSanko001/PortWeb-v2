@@ -54,6 +54,15 @@ const AsciiDonutBackground = () => {
             [offscreen]
         );
 
+        const themeRoot = document.querySelector("main[data-theme]");
+        const sendTheme = () => worker.postMessage({
+            type: "theme",
+            light: themeRoot?.dataset.theme === "light",
+        });
+        sendTheme();
+        const themeObserver = themeRoot ? new MutationObserver(sendTheme) : null;
+        themeObserver?.observe(themeRoot, { attributes: true, attributeFilter: ["data-theme"] });
+
         const handleResize = () => {
             canvas.style.width = `${window.innerWidth}px`;
             canvas.style.height = `${window.innerHeight}px`;
@@ -75,6 +84,7 @@ const AsciiDonutBackground = () => {
         return () => {
             window.removeEventListener("resize", handleResize);
             document.removeEventListener("visibilitychange", handleVisibility);
+            themeObserver?.disconnect();
             worker.terminate();
             canvas.remove();
         };

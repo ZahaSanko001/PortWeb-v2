@@ -1,9 +1,4 @@
 import React, { useState } from "react";
-import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const navLinks = [
     { href: "#hero", label: "~/" },
@@ -15,35 +10,14 @@ const navLinks = [
 
 const dotColors = ["bg-gruvbox-red/70", "bg-gruvbox-yellow/70", "bg-gruvbox-green/70"];
 
-const Navbar = () => {
+const Navbar = ({ theme, onToggleTheme }) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    useGSAP(() => {
-        // Anchored to real page scroll (numeric start), not the fixed
-        // nav's own bounding box — a fixed element's rect doesn't move
-        // as the page scrolls, so using it as the trigger was unreliable.
-        gsap.fromTo(
-            ".nav-surface",
-            { backgroundColor: "var(--gruvbox-bg0-overlay)", backdropFilter: "blur(0px)" },
-            {
-                backgroundColor: "var(--gruvbox-bg0-overlay)",
-                backdropFilter: "blur(10px)",
-                duration: 0.4,
-                ease: "power1.out",
-                scrollTrigger: {
-                    trigger: "body",
-                    start: "60px top",
-                    toggleActions: "play none none reverse",
-                },
-            }
-        );
-    }, []);
 
     return (
         <nav>
             {/* desktop */}
             <div className="hidden md:flex fixed top-0 left-4 justify-center py-4 z-40">
-                <div className="nav-surface flex items-center gap-1 rounded-full border border-gruvbox-bg3/70 px-2 py-2">
+                <div className="nav-surface flex items-center gap-1 rounded-full border border-gruvbox-bg3/70 bg-gruvbox-bg0/90 px-2 py-2 backdrop-blur-[10px]">
                     <div className="flex items-center gap-1.5 px-3">
                         {dotColors.map((c, i) => (
                             <span key={i} className={`w-1.5 h-1.5 rounded-full ${c}`} />
@@ -71,12 +45,43 @@ const Navbar = () => {
                 </div>
             </div>
 
+            <button
+                type="button"
+                onClick={onToggleTheme}
+                aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                aria-pressed={theme === "light"}
+                className="fixed top-4 right-4 z-40 inline-flex items-center gap-2 rounded-full border border-gruvbox-bg3/70 bg-gruvbox-bg1/90 px-3 py-2 font-mono text-xs text-gruvbox-fg1 shadow-lg backdrop-blur transition-colors hover:border-gruvbox-orange/60 hover:text-gruvbox-orange"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                >
+                    {theme === "dark" ? (
+                        <>
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+                        </>
+                    ) : (
+                        <path d="M20.9 13A8.5 8.5 0 0 1 11 3.1 8.5 8.5 0 1 0 20.9 13Z" />
+                    )}
+                </svg>
+                
+            </button>
+
             {/* mobile trigger */}
             <div className="md:hidden fixed top-4 left-4 z-40">
                 <button
                     onClick={() => setIsOpen(true)}
                     aria-label="Open menu"
-                    className={`nav-surface rounded-lg border border-gruvbox-bg3/70 p-2.5 text-gruvbox-orange transition-opacity ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+                    className={`nav-surface rounded-lg border border-gruvbox-bg3/70 bg-gruvbox-bg0/90 p-2.5 text-gruvbox-orange backdrop-blur-[10px] transition-opacity ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />

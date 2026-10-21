@@ -25,6 +25,7 @@ let output = [];
 let zbuffer = [];
 let reduceMotion = false;
 let timerId = null;
+let lightTheme = false;
 
 function configure(width, height) {
     cols = Math.ceil(width / CELL_W);
@@ -78,8 +79,8 @@ function renderFrame() {
     ctx.font = `bold ${CELL_H - 2}px monospace`;
     ctx.textBaseline = "top";
 
-    const dimColor = "rgba(168, 153, 132, 0.9)"; // gruvbox fg4 — shaded side
-    const brightColor = "rgba(254, 128, 25, 1)"; // gruvbox orange — lit side
+    const dimColor = lightTheme ? "rgba(92, 95, 119, 0.52)" : "rgba(168, 153, 132, 0.9)";
+    const brightColor = lightTheme ? "rgba(254, 100, 11, 0.72)" : "rgba(254, 128, 25, 1)";
 
     for (let row = 0; row < rows; row++) {
         let dimLine = "";
@@ -136,5 +137,10 @@ self.onmessage = (e) => {
         } else if (!hidden && !timerId && !reduceMotion) {
             timerId = setInterval(renderFrame, targetFrameMs);
         }
+    }
+
+    if (type === "theme") {
+        lightTheme = e.data.light;
+        if (ctx) renderFrame();
     }
 };
