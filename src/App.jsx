@@ -18,6 +18,7 @@ import Experience2 from "./Components/Experience2";
 import Contact from "./Components/Contact";
 import Contact2 from "./Components/Contact2";
 import AsciiDonutBackground from "./Components/AsciiDonutBackground";
+import DailyPractice from "./Components/DailyLearning";
 
 const App = () => {
   const [hasThemePreference, setHasThemePreference] = useState(() => {
@@ -56,10 +57,10 @@ const App = () => {
       <AsciiDonutBackground/>
       <Navbar2 theme={theme} onToggleTheme={toggleTheme}/>
       <Hero_gruv theme={theme}/>
-      <Carousel3_1/>
-      <Projects_gruv/>
       <Experience2/>
+      <Projects_gruv/>
       <About2/>
+      <DailyPractice/>
       <Contact2/>
     </main>
   )
